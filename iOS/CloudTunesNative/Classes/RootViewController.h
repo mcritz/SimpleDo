@@ -32,5 +32,5 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *allAlbums;
-
+@property (nonatomic, retain) NSMutableArray *allMissions;
 @end

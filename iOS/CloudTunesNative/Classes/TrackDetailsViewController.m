@@ -33,28 +33,30 @@
 @synthesize tblTracks;
 @synthesize tracksSpinner;
 
-@synthesize theAlbumId;
+@synthesize theMissionId;
 @synthesize theAlbumPrice;
 @synthesize theAlbumDescription;
 @synthesize theAlbumTitle; 
 @synthesize tracks;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil albumId:(NSString *)albumId albumTitle:(NSString *)albumTitle;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil missionId:(NSString *)missionId ;
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-		theAlbumId = albumId;
-        theAlbumTitle = albumTitle;
-		self.title = theAlbumTitle;
+		//theMissionId = theMissionId;
+        
+        
+        //theAlbumTitle = albumTitle;
+		//self.title = theAlbumTitle;
 		
-        NSString *queryString =  [NSString stringWithFormat:@"%@%@%@", 
-                                  @"select Name, Released_On__c, Description__c, Price__c, (select name, price__c from Tracks__r) from Album__c where id = '", theAlbumId,@"'"];
-        
-        SFRestRequest *request;
-        request = [[SFRestAPI sharedInstance] requestForQuery:queryString];
-        
-        [[SFRestAPI sharedInstance] send:request delegate:self];
+//        NSString *queryString =  [NSString stringWithFormat:@"%@%@%@", 
+//                                  @"select Name, Released_On__c, Description__c, Price__c, (select name, price__c from Tracks__r) from Album__c where id = '", theAlbumId,@"'"];
+//        
+//        SFRestRequest *request;
+//        request = [[SFRestAPI sharedInstance] requestForQuery:queryString];
+//        
+//        [[SFRestAPI sharedInstance] send:request delegate:self];
     }
     return self;
 }
