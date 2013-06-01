@@ -61,7 +61,7 @@
          */
         SFRestRequest *request;
         NSString* queryString = [NSString stringWithFormat:@"%@%@%@",
-                                 @"SELECT Assigned_To__c,Name,Status__c, (select id, Status,Subject,WhatId, order__c from tasks) FROM Mission__c where Assigned_To__c='", self.userId,@"'"];
+                                 @"SELECT Assigned_To__c,Name,Status__c, (select id, Status,Subject,WhatId, order__c from tasks where Status not in ('Completed','Cancelled')) FROM Mission__c where Assigned_To__c='", self.userId,@"'"];
         
         request = [[SFRestAPI sharedInstance] requestForQuery:queryString];
         
@@ -305,8 +305,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    NSDictionary *selectedMission = [self.allMissions objectAtIndex:indexPath.row];
-    NSLog(@"obj----%@",selectedMission);
+    SFMission *selectedMission = [self.allMissions objectAtIndex:indexPath.row];
+    NSLog(@"selected mission in didselectrow----%@",selectedMission);
     TaskViewController *taskViewController = [[TaskViewController alloc] initWithMission:selectedMission];
     [self.navigationController pushViewController:taskViewController animated:YES];
     [taskViewController release];

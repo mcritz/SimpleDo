@@ -39,17 +39,17 @@
     return _thisMissionTasks;
 }
 
--(NSDictionary*)querySFDC:(NSString*)userId
-{
-    SFRestRequest *request;
-    NSString* queryString = [NSString stringWithFormat:@"%@%@%@",
-                             @"SELECT Assigned_To__c,Name,Status__c FROM Mission__c where Assigned_To__c='", self.userId,@"'"];
-    
-    request = [[SFRestAPI sharedInstance] requestForQuery:queryString];
-    
-    [[SFRestAPI sharedInstance] send:request delegate:self];
-    return nil;
-}
+//-(NSDictionary*)querySFDC:(NSString*)userId
+//{
+//    SFRestRequest *request;
+//    NSString* queryString = [NSString stringWithFormat:@"%@%@%@",
+//                             @"SELECT Assigned_To__c,Name,Status__c FROM Mission__c where Assigned_To__c='", self.userId,@"'"];
+//    
+//    request = [[SFRestAPI sharedInstance] requestForQuery:queryString];
+//    
+//    [[SFRestAPI sharedInstance] send:request delegate:self];
+//    return nil;
+//}
 
 -(NSString*)updateTask: (NSString*)taskId withStatus:(NSString* )taskStatus
 {
