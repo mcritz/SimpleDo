@@ -1,9 +1,7 @@
 //
 //  SFMission.h
-//  CloudTunesNative
-//
 //  Created by Prashanth Reddy Kambalapally on 5/25/13.
-//  Copyright (c) 2013 salesforce.com. All rights reserved.
+//  © 2013 Map of the Unexplored
 //
 
 #import <Foundation/Foundation.h>

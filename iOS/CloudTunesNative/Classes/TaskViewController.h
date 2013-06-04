@@ -1,3 +1,8 @@
+//
+//  Created by Prashanth Reddy Kambalapally on 5/31/13.
+//  © 2013 Map of the Unexplored
+//
+
 #import <UIKit/UIKit.h>
 #import "SFMission.h"
 

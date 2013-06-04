@@ -30,6 +30,7 @@
 
 - (void)updateUI{
     NSLog(@"tasks of the selected mission---%@",self.selectedMission.thisMissionTasks);
+    [self setTitle:self.selectedMission.thisMissionName];
     if(![self.selectedMission.thisMissionTasks isEqual:[NSNull null]])
     {
         self.taskText = [[self.selectedMission.thisMissionTasks allValues] componentsJoinedByString:@"--"];

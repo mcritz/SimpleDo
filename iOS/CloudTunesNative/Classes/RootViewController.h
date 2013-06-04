@@ -26,11 +26,8 @@
 #import "SFRestAPI.h"
 
 @interface RootViewController : UITableViewController <SFRestDelegate> {
-    
     NSMutableArray *allAlbums;    
-
 }
 
-@property (nonatomic, retain) NSMutableArray *allAlbums;
 @property (nonatomic, retain) NSMutableArray *allMissions;
 @end

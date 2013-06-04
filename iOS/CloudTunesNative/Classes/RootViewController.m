@@ -14,8 +14,6 @@
 
 @implementation RootViewController
 
-//@synthesize allMissions;
-@synthesize allAlbums;
 //Lazy initialization of the missions
 -(NSMutableArray *)allMissions
 {
@@ -52,10 +50,7 @@
 
 - (void)didReceiveMemoryWarning
 {
-    // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
 }
 
 #pragma mark - View lifecycle
@@ -63,19 +58,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -135,17 +122,15 @@
         NSDictionary* mission = [missions objectAtIndex:i];
         NSLog(@"mission----%@",mission);
         NSMutableDictionary* tasks = [mission objectForKey:@"Tasks"]?[mission objectForKey:@"Tasks"]:nil;
-        //NSLog(@"name----%@-----status---%@",[mission objectForKey:@"Name"],[mission objectForKey:@"Status__c"] );
         
         SFMission* thisMission = [[SFMission alloc] initWithMissionId:[mission objectForKey:@"Id"] andName:[mission objectForKey:@"Name"] andStatus:[mission objectForKey:@"Status__c"] andTasks:tasks];
          NSLog(@"thismission inside---%@",thisMission);
         [self.allMissions addObject:thisMission];
          NSLog(@"allmissions inside---%@",self.allMissions);
-        //[allTasks ];
     }
     
     
-    NSLog(@"allmissions----%@",self.allMissions);
+//    NSLog(@"allmissions----%@",self.allMissions);
     
     //self.allMissions = [response objectForKey:@"records"];
     [self.tableView reloadData];
@@ -221,7 +206,6 @@
 
 
 
-//TODO: uncomment for delete sample
 #pragma mark - Mobile SDK additional samples
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
