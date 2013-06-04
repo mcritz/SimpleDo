@@ -20,8 +20,12 @@
 {
     self.selectedMission = mission;
     NSLog(@"tasks of the selected mission---%@",self.selectedMission.thisMissionTasks);
-    self.tasksDisplay.text = [[self.selectedMission.thisMissionTasks allValues] componentsJoinedByString:@"--"];
-    [self.selectedMission updateTask:[[[mission.thisMissionTasks objectForKey:@"records"] objectAtIndex:0] objectForKey:@"Id"] withStatus:@"Completed"];
+    if(self.selectedMission.thisMissionTasks !=[NSNull null] )
+    {
+        self.tasksDisplay.text = [[self.selectedMission.thisMissionTasks allValues] componentsJoinedByString:@"--"];
+      [self.selectedMission updateTask:[[[mission.thisMissionTasks objectForKey:@"records"] objectAtIndex:0] objectForKey:@"Id"] withStatus:@"Completed"];  
+    }
+    //
     return self;
 }
 
