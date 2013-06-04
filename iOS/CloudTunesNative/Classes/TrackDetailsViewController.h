@@ -37,7 +37,7 @@
  */
 @interface TrackDetailsViewController : UIViewController <SFRestDelegate, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource> {
     
-	NSString *theAlbumId;
+	NSString *theMissionId;
     NSString *theAlbumTitle;
 	NSMutableArray *tracks;
     NSString *theAlbumDescription;
@@ -49,7 +49,7 @@
 	UIPickerView *tracksSpinner;
 }
 
-@property(nonatomic, retain) NSString *theAlbumId;
+@property(nonatomic, retain) NSString *theMissionId;
 @property(nonatomic, retain) NSString *theAlbumTitle; 
 @property(nonatomic, retain) NSString *theAlbumDescription;
 @property(nonatomic, retain) NSString *theAlbumPrice;
