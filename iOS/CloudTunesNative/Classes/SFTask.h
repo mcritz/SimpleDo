@@ -11,13 +11,13 @@
 @interface SFTask : NSObject
 
 @property (nonatomic, retain)NSString *taskId;
-@property (nonatomic, retain)NSString *taskOrder;
-@property (nonatomic, retain)NSString *taskStatus;
+//@property (nonatomic, retain)NSString *taskOrder;
+//@property (nonatomic, retain)NSString *taskStatus;
 @property (nonatomic, retain)NSString *taskSubject;
-@property (nonatomic, retain)NSString *taskWhatId;
-@property (nonatomic, retain)NSString *taskType;
-@property (nonatomic, retain)NSString *taskUrl;
+//@property (nonatomic, retain)NSString *taskWhatId;
+//@property (nonatomic, retain)NSString *taskType;
+//@property (nonatomic, retain)NSString *taskUrl;
 
--(SFTask *)initWithDictionary:(NSDictionary *)taskDefinition;
+-(SFTask *)initWithDictionary:(NSMutableDictionary *)taskDefinition;
 
 @end

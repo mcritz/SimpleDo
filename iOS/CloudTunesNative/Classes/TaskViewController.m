@@ -30,13 +30,13 @@
 }
 
 - (void)updateUI{
-    NSLog(@"tasks of the selected mission---%@",self.selectedMission.thisMissionTasks);
+    NSLog(@"tasks of the selected mission---%@",self.selectedMission.tasks);
     [self setTitle:self.selectedMission.thisMissionName];
-    if(![self.selectedMission.thisMissionTasks isEqual:[NSNull null]])
+    if(![self.selectedMission.tasks isEqual:[NSNull null]])
     {
-        self.taskText = [[self.selectedMission.thisMissionTasks allValues] componentsJoinedByString:@"--"];
+        self.taskText = [self.selectedMission.tasks[0] taskSubject];
     } else {
-        self.taskText = @"No Missions. SadFace McGee";
+        self.taskText = @"No Missions";
     }
     [self.taskLabel setText:self.taskText];
 //    NSLog(@"taskText: \r%@\r taskLabel:\r%@", self.taskText, self.taskLabel);

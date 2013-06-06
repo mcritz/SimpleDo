@@ -6,6 +6,7 @@
 #import "SFIdentityData.h"
 #import "SFAccountManager.h"
 #import "SFMission.h"
+#import "SFTask.h"
 #import "TaskViewController.h"
 
 @interface RootViewController()
@@ -122,9 +123,25 @@
     for (NSDictionary *record in missions) {
         // NSDictionary* mission = [record objectAtIndex:i];
         NSLog(@"mission----%@",record);
-        NSMutableDictionary* tasks = [record objectForKey:@"Tasks"]?[record objectForKey:@"Tasks"]:nil;
-        NSLog(@"tasks :\r%@",tasks);
-        SFMission* thisMission = [[SFMission alloc] initWithMissionId:[record objectForKey:@"Id"] andName:[record objectForKey:@"Name"] andStatus:[record objectForKey:@"Status__c"] andTasks:tasks];
+        NSDictionary *responseTasksObject = [record objectForKey:@"Tasks"];
+        NSLog(@"responseTasksObject\r %@", responseTasksObject);
+        NSDictionary *responseTasks = [responseTasksObject objectForKey:@"records"];
+        NSMutableArray *tasksArray = [[NSMutableArray alloc] init];
+        
+        if (responseTasks.count > 0){
+            for(NSMutableDictionary *singleTask in responseTasks){
+                NSLog(@"singleTask %@", singleTask);
+                SFTask *task = [[SFTask alloc] initWithDictionary:singleTask];
+                
+                [tasksArray addObject:task];
+            }
+        } else {
+            NSDictionary *noTasksDictionary = @{@"taskStatus": @"No tasks"};
+            SFTask *task = [[SFTask alloc] initWithDictionary:[noTasksDictionary mutableCopy]];
+            [tasksArray addObject:task];
+        }
+        // NSLog(@"tasks :\r%@",responseTasks);
+        SFMission* thisMission = [[SFMission alloc] initWithMissionId:[record objectForKey:@"Id"] andName:[record objectForKey:@"Name"] andStatus:[record objectForKey:@"Status__c"] andTasks:tasksArray];
          NSLog(@"thismission inside---%@",thisMission);
         [self.allMissions addObject:thisMission];
          NSLog(@"allmissions inside---%@",self.allMissions);

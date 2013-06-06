@@ -13,12 +13,12 @@
 -(SFTask *)initWithDictionary:(NSDictionary *)taskDefinition {
     NSLog(@"SFTask init taskDefinition: %@", taskDefinition);
     self.taskId     = [taskDefinition valueForKey:@"Id"];
-    self.taskOrder  = [taskDefinition valueForKey:@"Order__c"];
-    self.taskStatus = [taskDefinition valueForKey:@"Status"];
+//    self.taskOrder  = [taskDefinition valueForKey:@"Order__c"];
+//    self.taskStatus = [taskDefinition valueForKey:@"Status"];
     self.taskSubject= [taskDefinition valueForKey:@"Subject"];
-    self.taskWhatId = [taskDefinition valueForKey:@"WhatId"];
-    self.taskType   = [taskDefinition valueForKey:@"type"];
-    self.taskUrl    = [taskDefinition valueForKey:@"url"];
+//    self.taskWhatId = [taskDefinition valueForKey:@"WhatId"];
+//    self.taskType   = [taskDefinition valueForKey:@"type"];
+//    self.taskUrl    = [taskDefinition valueForKey:@"url"];
     return self;
 }
 

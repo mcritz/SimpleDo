@@ -22,28 +22,23 @@
 
 -(id)initWithMissionId: (NSString* )missionId andName:missionName andStatus:missionStatus andTasks:(NSMutableDictionary*)tasks
 {
-    self.thisMissionTasks = [tasks valueForKey:@"records"];
-    NSLog(@"thisMissionTasks %@", self.thisMissionTasks);
+//    self.thisMissionTasks = [tasks copy];
+    // NSLog(@"thisMissionTasks %@", self.thisMissionTasks);
     self.thisMissionId = missionId;
     self.thisMissionName = missionName;
     self.thisMissionStatus = missionStatus;
     SFIdentityData* idData = [[SFAccountManager sharedInstance] idData];
     self.userId = idData.userId;
-    NSMutableArray *tempTaskArray = [[NSMutableArray alloc] init];
-    for (NSDictionary *keys in tasks) {
-        SFTask *task = [[SFTask alloc] initWithDictionary:keys];
-        [tempTaskArray addObject:task];
-    }
-    self.tasks = [tempTaskArray copy];
+    self.tasks = [tasks copy];
     return self;
 }
 
 //Lazy initialization of the missions
--(NSMutableDictionary *)thisMissionTasks
-{
-    if(!_thisMissionTasks)_thisMissionTasks = [[NSMutableDictionary alloc] init];
-    return _thisMissionTasks;
-}
+//-(NSMutableDictionary *)thisMissionTasks
+//{
+//    if(!_thisMissionTasks)_thisMissionTasks = [[NSMutableDictionary alloc] init];
+//    return _thisMissionTasks;
+//}
 
 //-(NSDictionary*)querySFDC:(NSString*)userId
 //{
