@@ -11,6 +11,7 @@
 		0F3E3337175EEFBF00353D60 /* SFTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3E3336175EEFBF00353D60 /* SFTask.m */; };
 		0F3E3340176050C800353D60 /* MissionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3E333E176050C700353D60 /* MissionTableViewController.m */; };
 		0F3E3341176050C800353D60 /* MissionTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F3E333F176050C800353D60 /* MissionTableViewController.xib */; };
+		0F3E33441760C91200353D60 /* SFRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3E33431760C91100353D60 /* SFRequest.m */; };
 		3B94BF5717595D37009ED823 /* TaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B94BF5617595D37009ED823 /* TaskViewController.m */; };
 		3BB5ED1F1751A7FF00FE30C7 /* SFMission.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB5ED1E1751A7FF00FE30C7 /* SFMission.m */; };
 		82A9FE0C15DC39EA00AE37B9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A9FE0B15DC39EA00AE37B9 /* CoreData.framework */; };
@@ -56,6 +57,8 @@
 		0F3E333D176050C700353D60 /* MissionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MissionTableViewController.h; path = Classes/MissionTableViewController.h; sourceTree = "<group>"; };
 		0F3E333E176050C700353D60 /* MissionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MissionTableViewController.m; path = Classes/MissionTableViewController.m; sourceTree = "<group>"; };
 		0F3E333F176050C800353D60 /* MissionTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MissionTableViewController.xib; path = Classes/MissionTableViewController.xib; sourceTree = "<group>"; };
+		0F3E33421760C91100353D60 /* SFRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFRequest.h; path = Classes/SFRequest.h; sourceTree = "<group>"; };
+		0F3E33431760C91100353D60 /* SFRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFRequest.m; path = Classes/SFRequest.m; sourceTree = "<group>"; };
 		3B94BF5517595D37009ED823 /* TaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TaskViewController.h; path = Classes/TaskViewController.h; sourceTree = "<group>"; };
 		3B94BF5617595D37009ED823 /* TaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TaskViewController.m; path = Classes/TaskViewController.m; sourceTree = "<group>"; };
 		3BB5ED1D1751A7FE00FE30C7 /* SFMission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFMission.h; path = Classes/SFMission.h; sourceTree = "<group>"; };
@@ -581,6 +584,8 @@
 				0F3E333F176050C800353D60 /* MissionTableViewController.xib */,
 				82A9FEC815DC39EC00AE37B9 /* AppDelegate.h */,
 				82A9FEC915DC39EC00AE37B9 /* AppDelegate.m */,
+				0F3E33421760C91100353D60 /* SFRequest.h */,
+				0F3E33431760C91100353D60 /* SFRequest.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -680,6 +685,7 @@
 				3B94BF5717595D37009ED823 /* TaskViewController.m in Sources */,
 				0F3E3337175EEFBF00353D60 /* SFTask.m in Sources */,
 				0F3E3340176050C800353D60 /* MissionTableViewController.m in Sources */,
+				0F3E33441760C91200353D60 /* SFRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
