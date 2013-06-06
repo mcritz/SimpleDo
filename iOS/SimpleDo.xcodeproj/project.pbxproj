@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0F3E332E175D9C0300353D60 /* TaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F3E332D175D9C0300353D60 /* TaskViewController.xib */; };
 		0F3E3337175EEFBF00353D60 /* SFTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3E3336175EEFBF00353D60 /* SFTask.m */; };
+		0F3E3340176050C800353D60 /* MissionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3E333E176050C700353D60 /* MissionTableViewController.m */; };
+		0F3E3341176050C800353D60 /* MissionTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F3E333F176050C800353D60 /* MissionTableViewController.xib */; };
 		3B94BF5717595D37009ED823 /* TaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B94BF5617595D37009ED823 /* TaskViewController.m */; };
 		3BB5ED1F1751A7FF00FE30C7 /* SFMission.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB5ED1E1751A7FF00FE30C7 /* SFMission.m */; };
 		82A9FE0C15DC39EA00AE37B9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A9FE0B15DC39EA00AE37B9 /* CoreData.framework */; };
@@ -44,8 +46,6 @@
 		82A9FED615DC39EC00AE37B9 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A9FED515DC39EC00AE37B9 /* libsqlite3.dylib */; };
 		82A9FED815DC39EC00AE37B9 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A9FED715DC39EC00AE37B9 /* libz.dylib */; };
 		82A9FEDA15DC39EC00AE37B9 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 82A9FED915DC39EC00AE37B9 /* Settings.bundle */; };
-		82A9FEE715DC3BDF00AE37B9 /* TrackDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A9FEE515DC3BDF00AE37B9 /* TrackDetailsViewController.m */; };
-		82A9FEE815DC3BDF00AE37B9 /* TrackDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82A9FEE615DC3BDF00AE37B9 /* TrackDetailsViewController.xib */; };
 		82A9FEEC15DC3F4100AE37B9 /* albums.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A9FEEB15DC3F4100AE37B9 /* albums.png */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +53,9 @@
 		0F3E332D175D9C0300353D60 /* TaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TaskViewController.xib; path = UI/TaskViewController.xib; sourceTree = "<group>"; };
 		0F3E3335175EEFBF00353D60 /* SFTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFTask.h; path = Classes/SFTask.h; sourceTree = "<group>"; };
 		0F3E3336175EEFBF00353D60 /* SFTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFTask.m; path = Classes/SFTask.m; sourceTree = "<group>"; };
+		0F3E333D176050C700353D60 /* MissionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MissionTableViewController.h; path = Classes/MissionTableViewController.h; sourceTree = "<group>"; };
+		0F3E333E176050C700353D60 /* MissionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MissionTableViewController.m; path = Classes/MissionTableViewController.m; sourceTree = "<group>"; };
+		0F3E333F176050C800353D60 /* MissionTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MissionTableViewController.xib; path = Classes/MissionTableViewController.xib; sourceTree = "<group>"; };
 		3B94BF5517595D37009ED823 /* TaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TaskViewController.h; path = Classes/TaskViewController.h; sourceTree = "<group>"; };
 		3B94BF5617595D37009ED823 /* TaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TaskViewController.m; path = Classes/TaskViewController.m; sourceTree = "<group>"; };
 		3BB5ED1D1751A7FE00FE30C7 /* SFMission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFMission.h; path = Classes/SFMission.h; sourceTree = "<group>"; };
@@ -212,9 +215,6 @@
 		82A9FED515DC39EC00AE37B9 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = /usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		82A9FED715DC39EC00AE37B9 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = /usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		82A9FED915DC39EC00AE37B9 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		82A9FEE415DC3BDF00AE37B9 /* TrackDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrackDetailsViewController.h; path = Classes/TrackDetailsViewController.h; sourceTree = "<group>"; };
-		82A9FEE515DC3BDF00AE37B9 /* TrackDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrackDetailsViewController.m; path = Classes/TrackDetailsViewController.m; sourceTree = "<group>"; };
-		82A9FEE615DC3BDF00AE37B9 /* TrackDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TrackDetailsViewController.xib; path = Classes/TrackDetailsViewController.xib; sourceTree = "<group>"; };
 		82A9FEEB15DC3F4100AE37B9 /* albums.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = albums.png; path = Resources/albums.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -245,16 +245,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0F3E332F175DAC6500353D60 /* Old */ = {
-			isa = PBXGroup;
-			children = (
-				82A9FEE415DC3BDF00AE37B9 /* TrackDetailsViewController.h */,
-				82A9FEE515DC3BDF00AE37B9 /* TrackDetailsViewController.m */,
-				82A9FEE615DC3BDF00AE37B9 /* TrackDetailsViewController.xib */,
-			);
-			name = Old;
-			sourceTree = "<group>";
-		};
 		82A9FDFB15DC39EA00AE37B9 = {
 			isa = PBXGroup;
 			children = (
@@ -579,16 +569,18 @@
 			children = (
 				82A9FECB15DC39EC00AE37B9 /* RootViewController.h */,
 				82A9FECC15DC39EC00AE37B9 /* RootViewController.m */,
+				0F3E3335175EEFBF00353D60 /* SFTask.h */,
+				0F3E3336175EEFBF00353D60 /* SFTask.m */,
 				0F3E332D175D9C0300353D60 /* TaskViewController.xib */,
 				3B94BF5517595D37009ED823 /* TaskViewController.h */,
 				3B94BF5617595D37009ED823 /* TaskViewController.m */,
 				3BB5ED1D1751A7FE00FE30C7 /* SFMission.h */,
 				3BB5ED1E1751A7FF00FE30C7 /* SFMission.m */,
+				0F3E333D176050C700353D60 /* MissionTableViewController.h */,
+				0F3E333E176050C700353D60 /* MissionTableViewController.m */,
+				0F3E333F176050C800353D60 /* MissionTableViewController.xib */,
 				82A9FEC815DC39EC00AE37B9 /* AppDelegate.h */,
 				82A9FEC915DC39EC00AE37B9 /* AppDelegate.m */,
-				0F3E332F175DAC6500353D60 /* Old */,
-				0F3E3335175EEFBF00353D60 /* SFTask.h */,
-				0F3E3336175EEFBF00353D60 /* SFTask.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -668,9 +660,9 @@
 				82A9FED015DC39EC00AE37B9 /* SFAuthorizingViewController.xib in Resources */,
 				82A9FED215DC39EC00AE37B9 /* SFNativeRootViewController.xib in Resources */,
 				82A9FEDA15DC39EC00AE37B9 /* Settings.bundle in Resources */,
-				82A9FEE815DC3BDF00AE37B9 /* TrackDetailsViewController.xib in Resources */,
 				82A9FEEC15DC3F4100AE37B9 /* albums.png in Resources */,
 				0F3E332E175D9C0300353D60 /* TaskViewController.xib in Resources */,
+				0F3E3341176050C800353D60 /* MissionTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -684,10 +676,10 @@
 				82A9FE2415DC39EA00AE37B9 /* main.m in Sources */,
 				82A9FECA15DC39EC00AE37B9 /* AppDelegate.m in Sources */,
 				82A9FECD15DC39EC00AE37B9 /* RootViewController.m in Sources */,
-				82A9FEE715DC3BDF00AE37B9 /* TrackDetailsViewController.m in Sources */,
 				3BB5ED1F1751A7FF00FE30C7 /* SFMission.m in Sources */,
 				3B94BF5717595D37009ED823 /* TaskViewController.m in Sources */,
 				0F3E3337175EEFBF00353D60 /* SFTask.m in Sources */,
+				0F3E3340176050C800353D60 /* MissionTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
