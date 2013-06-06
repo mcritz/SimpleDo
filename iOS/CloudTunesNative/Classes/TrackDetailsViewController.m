@@ -13,7 +13,7 @@
 @synthesize theAlbumTitle; 
 @synthesize tracks;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil missionId:(NSString *)missionId ;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil missionId:(NSString *)missionId
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
