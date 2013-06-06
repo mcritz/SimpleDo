@@ -8,9 +8,7 @@
 
 #import "SFRestAPI.h"
 
-
-@interface SFMission : NSObject<SFRestDelegate>{
-}
+@interface SFMission : NSObject<SFRestDelegate>
 @property (strong,nonatomic) NSMutableDictionary *thisMissionTasks;
 @property (strong,nonatomic) NSString* thisMissionId;
 @property (strong,nonatomic) NSString* thisMissionName;
@@ -18,4 +16,5 @@
 // -(NSDictionary*)querySFDC:(NSString*)userId;
 -(id)initWithMissionId: (NSString* )missionId andName:missionName andStatus:missionStatus andTasks:(NSMutableDictionary*)tasks;
 -(NSString*)updateTask: (NSString*)taskId withStatus:(NSString* )taskStatus;
+@property (nonatomic, retain)NSArray *tasks;
 @end

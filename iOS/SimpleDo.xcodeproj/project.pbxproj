@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F3E332E175D9C0300353D60 /* TaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F3E332D175D9C0300353D60 /* TaskViewController.xib */; };
+		0F3E3337175EEFBF00353D60 /* SFTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3E3336175EEFBF00353D60 /* SFTask.m */; };
 		3B94BF5717595D37009ED823 /* TaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B94BF5617595D37009ED823 /* TaskViewController.m */; };
 		3BB5ED1F1751A7FF00FE30C7 /* SFMission.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB5ED1E1751A7FF00FE30C7 /* SFMission.m */; };
 		82A9FE0C15DC39EA00AE37B9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A9FE0B15DC39EA00AE37B9 /* CoreData.framework */; };
@@ -50,6 +51,8 @@
 
 /* Begin PBXFileReference section */
 		0F3E332D175D9C0300353D60 /* TaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TaskViewController.xib; path = UI/TaskViewController.xib; sourceTree = "<group>"; };
+		0F3E3335175EEFBF00353D60 /* SFTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFTask.h; path = Classes/SFTask.h; sourceTree = "<group>"; };
+		0F3E3336175EEFBF00353D60 /* SFTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFTask.m; path = Classes/SFTask.m; sourceTree = "<group>"; };
 		3B94BF5517595D37009ED823 /* TaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TaskViewController.h; path = Classes/TaskViewController.h; sourceTree = "<group>"; };
 		3B94BF5617595D37009ED823 /* TaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TaskViewController.m; path = Classes/TaskViewController.m; sourceTree = "<group>"; };
 		3BB5ED1D1751A7FE00FE30C7 /* SFMission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFMission.h; path = Classes/SFMission.h; sourceTree = "<group>"; };
@@ -584,6 +587,8 @@
 				82A9FEC815DC39EC00AE37B9 /* AppDelegate.h */,
 				82A9FEC915DC39EC00AE37B9 /* AppDelegate.m */,
 				0F3E332F175DAC6500353D60 /* Old */,
+				0F3E3335175EEFBF00353D60 /* SFTask.h */,
+				0F3E3336175EEFBF00353D60 /* SFTask.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -682,6 +687,7 @@
 				82A9FEE715DC3BDF00AE37B9 /* TrackDetailsViewController.m in Sources */,
 				3BB5ED1F1751A7FF00FE30C7 /* SFMission.m in Sources */,
 				3B94BF5717595D37009ED823 /* TaskViewController.m in Sources */,
+				0F3E3337175EEFBF00353D60 /* SFTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -93,7 +93,7 @@
 #pragma mark - SFRestAPIDelegate
 
 - (void)request:(SFRestRequest *)request didLoadResponse:(id)response {
-    
+    NSLog(@"response %@", response);
     NSArray *missions = [response objectForKey:@"records"];
     NSLog(@"missions----%@",missions);
     NSLog(@"request:didLoadResponse: #records: %d", missions.count);
@@ -118,12 +118,13 @@
     //NSMutableDictionary *allTasks = [[NSMutableDictionary alloc] init];// = [results objectForKey:@"records"];
     //NSMutableArray* allMissions = [[NSMutableArray alloc] init];
     
-    for (int i=0;i<missions.count;i++) {
-        NSDictionary* mission = [missions objectAtIndex:i];
-        NSLog(@"mission----%@",mission);
-        NSMutableDictionary* tasks = [mission objectForKey:@"Tasks"]?[mission objectForKey:@"Tasks"]:nil;
-        
-        SFMission* thisMission = [[SFMission alloc] initWithMissionId:[mission objectForKey:@"Id"] andName:[mission objectForKey:@"Name"] andStatus:[mission objectForKey:@"Status__c"] andTasks:tasks];
+    //for (int i=0;i<missions.count;i++) {
+    for (NSDictionary *record in missions) {
+        // NSDictionary* mission = [record objectAtIndex:i];
+        NSLog(@"mission----%@",record);
+        NSMutableDictionary* tasks = [record objectForKey:@"Tasks"]?[record objectForKey:@"Tasks"]:nil;
+        NSLog(@"tasks :\r%@",tasks);
+        SFMission* thisMission = [[SFMission alloc] initWithMissionId:[record objectForKey:@"Id"] andName:[record objectForKey:@"Name"] andStatus:[record objectForKey:@"Status__c"] andTasks:tasks];
          NSLog(@"thismission inside---%@",thisMission);
         [self.allMissions addObject:thisMission];
          NSLog(@"allmissions inside---%@",self.allMissions);

@@ -5,6 +5,7 @@
 
 #import "TaskViewController.h"
 #import "SFMission.h"
+#import "SFTask.h"
 
 @interface TaskViewController ()
 @property (nonatomic, retain) NSString *taskText;
