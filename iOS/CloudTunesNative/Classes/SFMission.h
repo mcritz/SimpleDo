@@ -9,7 +9,6 @@
 #import "SFRestAPI.h"
 
 @interface SFMission : NSObject<SFRestDelegate>
-// @property (strong,nonatomic) NSMutableDictionary *thisMissionTasks;
 @property (strong,nonatomic) NSString* thisMissionId;
 @property (strong,nonatomic) NSString* thisMissionName;
 @property (strong,nonatomic) NSString* thisMissionStatus;

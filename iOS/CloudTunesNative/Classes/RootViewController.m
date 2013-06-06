@@ -2,12 +2,11 @@
 
 #import "SFRestAPI.h"
 #import "SFRestRequest.h"
-#import "TrackDetailsViewController.h"
 #import "SFIdentityData.h"
 #import "SFAccountManager.h"
 #import "SFMission.h"
 #import "SFTask.h"
-#import "TaskViewController.h"
+#import "MissionTableViewController.h"
 
 @interface RootViewController()
 @property (nonatomic) NSString* userId;
@@ -136,21 +135,17 @@
                 [tasksArray addObject:task];
             }
         } else {
+            // TODO: Better error handling
             NSDictionary *noTasksDictionary = @{@"taskStatus": @"No tasks"};
             SFTask *task = [[SFTask alloc] initWithDictionary:[noTasksDictionary mutableCopy]];
             [tasksArray addObject:task];
         }
-        // NSLog(@"tasks :\r%@",responseTasks);
         SFMission* thisMission = [[SFMission alloc] initWithMissionId:[record objectForKey:@"Id"] andName:[record objectForKey:@"Name"] andStatus:[record objectForKey:@"Status__c"] andTasks:tasksArray];
          NSLog(@"thismission inside---%@",thisMission);
         [self.allMissions addObject:thisMission];
          NSLog(@"allmissions inside---%@",self.allMissions);
     }
     
-    
-//    NSLog(@"allmissions----%@",self.allMissions);
-    
-    //self.allMissions = [response objectForKey:@"records"];
     [self.tableView reloadData];
 }
 
@@ -202,10 +197,7 @@
     
     // Configure the cell...
     SFMission *obj = [self.allMissions objectAtIndex:indexPath.row];
-    cell.textLabel.text =  obj.thisMissionName;//[obj objectForKey:@"Name"];
-    //NSLog(@"obj.thisMissionName---%@",obj.thisMissionName );
-    //UIImage *image = [UIImage imageNamed:@"tracks.png"];
-    //cell.imageView.image = image;
+    cell.textLabel.text =  obj.thisMissionName;
     
     //add the arrow to the right hand side
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -266,9 +258,9 @@
     
     SFMission *selectedMission = [self.allMissions objectAtIndex:indexPath.row];
     NSLog(@"selected mission in didselectrow----%@",selectedMission);
-    TaskViewController *taskViewController = [[TaskViewController alloc] initWithMission:selectedMission :@"TaskViewController" :nil];
-    [self.navigationController pushViewController:taskViewController animated:YES];
-    [taskViewController release];
+    UITableViewController *missionTVC = [[MissionTableViewController alloc] initWithMission:selectedMission :@"MissionTableViewController" :nil];
+    [self.navigationController pushViewController:missionTVC animated:YES];
+    [missionTVC release];
 }
 
 @end

@@ -17,13 +17,10 @@
 @end
 @implementation SFMission
 
-//@synthesize tasks;
 @synthesize thisMissionId;
 
 -(id)initWithMissionId: (NSString* )missionId andName:missionName andStatus:missionStatus andTasks:(NSMutableDictionary*)tasks
 {
-//    self.thisMissionTasks = [tasks copy];
-    // NSLog(@"thisMissionTasks %@", self.thisMissionTasks);
     self.thisMissionId = missionId;
     self.thisMissionName = missionName;
     self.thisMissionStatus = missionStatus;
