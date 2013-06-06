@@ -10,6 +10,7 @@
 - (TaskViewController *)initWithTask:(SFTask *)task :(NSString *)nibNameOrNil :(NSBundle *)nibBundleOrNil;
 @property (retain, nonatomic) IBOutlet UILabel *taskLabel;
 @property (retain, nonatomic) IBOutlet UITextView *taskDescription;
+- (IBAction)completeButtonPressed:(UIButton *)sender;
 
 @property (nonatomic, retain) SFTask* task;
 @end

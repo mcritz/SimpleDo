@@ -56,4 +56,13 @@
     [self setTaskDescription:nil];
     [super viewDidUnload];
 }
+- (IBAction)completeButtonPressed:(UIButton *)sender {
+    [self completeTask];
+}
+
+- (void)completeTask {
+    NSLog(@"Task Complete");
+    
+}
+
 @end
