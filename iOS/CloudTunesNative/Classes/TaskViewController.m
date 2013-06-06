@@ -16,10 +16,10 @@
 
 # pragma mark - View Lifecycle
 
-- (id)initWithMission:(SFMission *)mission :(NSString *)nibNameOrNil :(NSBundle *)nibBundleOrNil
+- (TaskViewController *)initWithTask:(SFTask *)task :(NSString *)nibNameOrNil :(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    self.selectedMission = mission;
+    self.task = task;
     return self;
 }
 
@@ -30,11 +30,11 @@
 }
 
 - (void)updateUI{
-    NSLog(@"tasks of the selected mission---%@",self.selectedMission.tasks);
-    [self setTitle:self.selectedMission.thisMissionName];
-    if(![self.selectedMission.tasks isEqual:[NSNull null]])
+    NSLog(@"tasks of the selected mission---%@", self.task);
+    [self setTitle:[self.task taskSubject]];
+    if(![self.task isEqual:[NSNull null]])
     {
-        self.taskText = [self.selectedMission.tasks[0] taskSubject];
+        self.taskText = [self.task taskSubject];
     } else {
         self.taskText = @"No Missions";
     }

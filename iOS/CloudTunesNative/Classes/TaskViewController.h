@@ -4,12 +4,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SFMission.h"
+#import "SFTask.h"
 
 @interface TaskViewController : UIViewController
-- (id)initWithMission:(SFMission *)task :(NSString *)nibNameOrNil :(NSBundle *)nibBundleOrNil;
+- (TaskViewController *)initWithTask:(SFTask *)task :(NSString *)nibNameOrNil :(NSBundle *)nibBundleOrNil;
 @property (retain, nonatomic) IBOutlet UILabel *taskLabel;
 @property (retain, nonatomic) IBOutlet UITextView *taskDescription;
 
-@property (nonatomic, retain) SFMission* selectedMission;
+@property (nonatomic, retain) SFTask* task;
 @end

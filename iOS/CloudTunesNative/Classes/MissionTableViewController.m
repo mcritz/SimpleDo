@@ -8,6 +8,7 @@
 
 #import "MissionTableViewController.h"
 #import "SFTask.h"
+#import "TaskViewController.h"
 
 @interface MissionTableViewController ()
 @property (nonatomic, retain) SFMission *selectedMission;
@@ -122,13 +123,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    NSLog(@"task: \r%@\r\rindexPath:\r%@", self.selectedMission.tasks, indexPath);
+    SFTask *task = [self.selectedMission.tasks objectAtIndex:indexPath.row];
+    TaskViewController *taskVC = [[TaskViewController alloc]initWithTask:task :@"TaskViewController" :nil];
+
+    [self.navigationController pushViewController:taskVC animated:YES];
+    [taskVC release];
 }
 
 @end
