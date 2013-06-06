@@ -32,14 +32,18 @@
 - (void)updateUI{
     NSLog(@"tasks of the selected mission---%@", self.task);
     [self setTitle:[self.task taskSubject]];
+
+    NSString *status;
     if(![self.task isEqual:[NSNull null]])
     {
         self.taskText = [self.task taskSubject];
+        status = [self.task taskStatus];
     } else {
-        self.taskText = @"No Missions";
+        self.taskText = @"No Task";
+        status = @"No task present. Congratulations.";
     }
     [self.taskLabel setText:self.taskText];
-    
+    [self.taskDescription setText:status];
 }
 
 # pragma mark - Memory Management
@@ -47,6 +51,7 @@
 - (void)dealloc {
     [taskLabel release];
     [_taskDescription release];
+    [_completeButton release];
     [super dealloc];
 }
 
@@ -54,6 +59,7 @@
 
 - (void)viewDidUnload {
     [self setTaskDescription:nil];
+    [self setCompleteButton:nil];
     [super viewDidUnload];
 }
 - (IBAction)completeButtonPressed:(UIButton *)sender {
@@ -62,7 +68,13 @@
 
 - (void)completeTask {
     NSLog(@"Task Complete");
-    
+    [self.task updateTask:@"Completed":self];
+}
+
+- (void)didUpdateTask:(NSString *)status {
+    NSLog(@"didUpdateTask %@", status);
+    [self.taskDescription setText:status];
+    [self.completeButton removeFromSuperview];
 }
 
 @end

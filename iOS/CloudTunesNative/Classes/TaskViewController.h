@@ -11,6 +11,8 @@
 @property (retain, nonatomic) IBOutlet UILabel *taskLabel;
 @property (retain, nonatomic) IBOutlet UITextView *taskDescription;
 - (IBAction)completeButtonPressed:(UIButton *)sender;
-
+- (void)didUpdateTask:(NSString *)status;
+@property (retain, nonatomic) IBOutlet UIButton *completeButton;
 @property (nonatomic, retain) SFTask* task;
+
 @end
