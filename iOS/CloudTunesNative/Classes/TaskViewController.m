@@ -39,7 +39,6 @@
         self.taskText = @"No Missions";
     }
     [self.taskLabel setText:self.taskText];
-//    NSLog(@"taskText: \r%@\r taskLabel:\r%@", self.taskText, self.taskLabel);
     
 }
 
@@ -47,9 +46,14 @@
 
 - (void)dealloc {
     [taskLabel release];
+    [_taskDescription release];
     [super dealloc];
 }
 
 // [self.selectedMission updateTask:[[[mission.thisMissionTasks objectForKey:@"records"] objectAtIndex:0] objectForKey:@"Id"] withStatus:@"Completed"];
 
+- (void)viewDidUnload {
+    [self setTaskDescription:nil];
+    [super viewDidUnload];
+}
 @end

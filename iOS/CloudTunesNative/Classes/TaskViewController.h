@@ -9,5 +9,7 @@
 @interface TaskViewController : UIViewController
 - (id)initWithMission:(SFMission *)task :(NSString *)nibNameOrNil :(NSBundle *)nibBundleOrNil;
 @property (retain, nonatomic) IBOutlet UILabel *taskLabel;
+@property (retain, nonatomic) IBOutlet UITextView *taskDescription;
+
 @property (nonatomic, retain) SFMission* selectedMission;
 @end
