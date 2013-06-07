@@ -12,5 +12,6 @@
 @interface MissionTableViewController : UITableViewController <UITableViewDataSource>
 
 - (UITableViewController *)initWithMission:(SFMission *)mission :(NSString *)nibNameOrNil :(NSBundle *)nibBundleOrNil;
+@property (nonatomic, assign)UIBarButtonItem *addButton;
 
 @end
