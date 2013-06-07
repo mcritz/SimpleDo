@@ -35,28 +35,16 @@
 
 - (void)updateTask:(NSString *)status :(TaskViewController *)sender {
     self.taskVC = sender;
-    SFIdentityData* idData = [[SFAccountManager sharedInstance] idData];
-    self.userId = idData.userId;
     
-    //Here we use a query that should work on either Force.com or Database.com
-    /*SFRestRequest *request = [[SFRestAPI sharedInstance] requestForQuery:@"SELECT Name FROM User LIMIT 10"];
-     [[SFRestAPI sharedInstance] send:request delegate:self];
-     */
-    SFRestRequest *request;
-    
-    // TODO: need this query to UPDATE task Status to Completed using the "status" & "Id"
-    NSString* queryString = [NSString stringWithFormat:@"%@%@%@",
-                             @"SELECT Assigned_To__c,Name,Status__c, (select id, Status,Subject,WhatId, order__c from tasks where Status not in ('Completed','Cancelled')) FROM Mission__c where Assigned_To__c='", self.userId,@"'"];
-    
-    request = [[SFRestAPI sharedInstance] requestForQuery:queryString];
-    
-    [[SFRestAPI sharedInstance] send:request delegate:self];
+    SFRestRequest *updateTaskRequest;    
+    updateTaskRequest = [[SFRestAPI sharedInstance] requestForUpdateWithObjectType:@"Task" objectId:self.taskId fields:[[NSMutableDictionary alloc] initWithObjectsAndKeys:status, @"Status", nil]];
+    [[SFRestAPI sharedInstance] send:updateTaskRequest delegate:self];
 }
 
 - (void)request:(SFRestRequest *)request didLoadResponse:(id)response {
     NSLog(@"response %@", response);
     // TODO: [response description] should be parsed and pass a legit "yeah, I completed"
-    [self.taskVC didUpdateTask:[response description]];
+    [self.taskVC didUpdateTask:@"Complete"];
 }
 
 @end

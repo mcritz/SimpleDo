@@ -49,17 +49,6 @@
 //    return nil;
 //}
 
--(NSString*)updateTask: (NSString*)taskId withStatus:(NSString* )taskStatus
-{
-    SFRestRequest *updateTaskRequest;
-    //NSString* queryString = [NSString stringWithFormat:@"%@%@%@",
-    //                        @"SELECT Assigned_To__c,Name,Status__c FROM Mission__c where Assigned_To__c='", self.userId,@"'"];
-    
-    updateTaskRequest = [[SFRestAPI sharedInstance] requestForUpdateWithObjectType:@"Task" objectId:taskId fields:[[NSMutableDictionary alloc] initWithObjectsAndKeys:taskStatus, @"Status", nil]];
-    [[SFRestAPI sharedInstance] send:updateTaskRequest delegate:self];
-    return @"Success";
-}
-
 - (void)request:(SFRestRequest *)request didLoadResponse:(id)response {
     
 	NSMutableArray *allDetails = [response objectForKey:@"records"];

@@ -38,6 +38,9 @@
     {
         self.taskText = [self.task taskSubject];
         status = [self.task taskStatus];
+        if ([self.task.taskStatus isEqual:@"Completed"]) {
+            [self.completeButton setHidden:YES];
+        }
     } else {
         self.taskText = @"No Task";
         status = @"No task present. Congratulations.";

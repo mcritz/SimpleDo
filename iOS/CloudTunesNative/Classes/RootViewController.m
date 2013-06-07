@@ -27,14 +27,9 @@
     if (self) {
         SFIdentityData* idData = [[SFAccountManager sharedInstance] idData];
         self.userId = idData.userId;
-        
-        //Here we use a query that should work on either Force.com or Database.com
-        /*SFRestRequest *request = [[SFRestAPI sharedInstance] requestForQuery:@"SELECT Name FROM User LIMIT 10"];
-         [[SFRestAPI sharedInstance] send:request delegate:self];
-         */
         SFRestRequest *request;
         NSString* queryString = [NSString stringWithFormat:@"%@%@%@",
-                                 @"SELECT Assigned_To__c,Name,Status__c, (select id, Status,Subject,WhatId, order__c from tasks where Status not in ('Completed','Cancelled')) FROM Mission__c where Assigned_To__c='", self.userId,@"'"];
+                                 @"SELECT Assigned_To__c,Name,Status__c, (select id, Status,Subject,WhatId, order__c from tasks where Status not in ('Cancelled')) FROM Mission__c where Status__c<>'Failed' and Assigned_To__c='", self.userId,@"'"];
         
         request = [[SFRestAPI sharedInstance] requestForQuery:queryString];
         
@@ -97,37 +92,14 @@
     NSArray *missions = [response objectForKey:@"records"];
     NSLog(@"missions----%@",missions);
     NSLog(@"request:didLoadResponse: #records: %d", missions.count);
-    
-    //self.allMissions = [response objectForKey:@"records"];
-    /*
-     NSMutableArray *allDetails = [response objectForKey:@"records"];
-     
-     //database.com returns additional information such as attributes and number of results
-     //we want the actual response...
-     NSDictionary *results = [allDetails objectAtIndex:0];
-     NSDictionary *allTracks =[results objectForKey:@"Tracks__r"];
-     
-     //payload is returned as JSON. If the value of a textfield is null, Objective-C will represent this as a NSNull object.
-     //Printing it to the console will show as "<null>".
-     //This is different from nil,so let's check for NSNull
-     
-     theAlbumDescription = [results objectForKey:@"Description__c"];
-     */
-    //NSMutableArray *results = [missions objectForKey:@"Tasks"];
-    //  NSLog(@"results----%@",results);
-    //NSMutableDictionary *allTasks = [[NSMutableDictionary alloc] init];// = [results objectForKey:@"records"];
-    //NSMutableArray* allMissions = [[NSMutableArray alloc] init];
-    
-    //for (int i=0;i<missions.count;i++) {
     for (NSDictionary *record in missions) {
-        // NSDictionary* mission = [record objectAtIndex:i];
         NSLog(@"mission----%@",record);
         NSDictionary *responseTasksObject = [record objectForKey:@"Tasks"];
         NSLog(@"responseTasksObject\r %@", responseTasksObject);
-        NSDictionary *responseTasks = [responseTasksObject objectForKey:@"records"];
         NSMutableArray *tasksArray = [[NSMutableArray alloc] init];
         
-        if (responseTasks.count > 0){
+        if( ![responseTasksObject isEqual:[NSNull null]] ) {
+            NSDictionary *responseTasks = [responseTasksObject objectForKey:@"records"];
             for(NSMutableDictionary *singleTask in responseTasks){
                 NSLog(@"singleTask %@", singleTask);
                 SFTask *task = [[SFTask alloc] initWithDictionary:singleTask];
@@ -135,7 +107,7 @@
                 [tasksArray addObject:task];
             }
         } else {
-            // TODO: Better error handling
+            NSLog(@"no tasks!");
             NSDictionary *noTasksDictionary = @{@"taskStatus": @"No tasks"};
             SFTask *task = [[SFTask alloc] initWithDictionary:[noTasksDictionary mutableCopy]];
             [tasksArray addObject:task];
