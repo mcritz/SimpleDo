@@ -58,8 +58,6 @@
     [super dealloc];
 }
 
-// [self.selectedMission updateTask:[[[mission.thisMissionTasks objectForKey:@"records"] objectAtIndex:0] objectForKey:@"Id"] withStatus:@"Completed"];
-
 - (void)viewDidUnload {
     [self setTaskDescription:nil];
     [self setCompleteButton:nil];
