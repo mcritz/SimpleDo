@@ -11,5 +11,6 @@
 @interface NewTaskViewController : UIViewController
 - (IBAction)saveButtonPressed:(UIBarButtonItem *)sender;
 @property (retain, nonatomic) IBOutlet UITextView *newTaskTextview;
-
+- (NewTaskViewController *)initWithMissionId:(NSString *)missionId :(NSString *)nibNameOrNil :(NSBundle *)nibBundleOrNil;
+//@property (nonatomic, retain) IBOutlet UITextView *newTaskSubject;
 @end

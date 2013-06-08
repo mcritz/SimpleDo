@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SFRestAPI.h"
+#import "NewTaskViewController.h"
 
 @interface SFTask : NSObject <SFRestDelegate>
 
@@ -21,4 +22,5 @@
 
 - (SFTask *)initWithDictionary:(NSMutableDictionary *)taskDefinition;
 - (void)updateTask:(NSString *)status :sender;
++(void)createTask:(NSString *)sender withMissionId:(NSString*)missionId andSubject:(NSString*)subject;
 @end

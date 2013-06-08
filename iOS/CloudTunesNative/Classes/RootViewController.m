@@ -29,7 +29,7 @@
         self.userId = idData.userId;
         SFRestRequest *request;
         NSString* queryString = [NSString stringWithFormat:@"%@%@%@",
-                                 @"SELECT Assigned_To__c,Name,Status__c, (select id, Status,Subject,WhatId, order__c from tasks where Status not in ('Cancelled')) FROM Mission__c where Status__c<>'Failed' and Assigned_To__c='", self.userId,@"'"];
+                                 @"SELECT Id,Assigned_To__c,Name,Status__c, (select id, Status,Subject,WhatId, order__c from tasks where Status not in ('Cancelled') order by order__c desc) FROM Mission__c where Status__c<>'Failed' and Assigned_To__c='", self.userId,@"'"];
         
         request = [[SFRestAPI sharedInstance] requestForQuery:queryString];
         
