@@ -26,9 +26,11 @@
 - (NewTaskViewController *)initWithMissionId:(NSString *)missionId :(NSString *)nibNameOrNil :(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    self.selectedMissionId = missionId;
-    return self;
+    if (self){
+        self.selectedMissionId = missionId;
+    }
     NSLog(@"NewtaskVC inited %@",self.selectedMissionId);
+    return self;
 }
 
 
@@ -36,7 +38,6 @@
 {
     [super viewDidLoad];
     NSLog(@"NewtaskVC view did load %@",self.selectedMissionId);
-    // Do any additional setup after loading the view from its nib.
 }
 - (void)updateUI
 {

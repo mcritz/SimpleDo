@@ -53,17 +53,18 @@
 - (void)viewDidLoad
 {
 
-    // UIColor *brandColor = [[UIColor alloc] initWithRed:22 green:109 blue:78 alpha:1];
-    // [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navBarMissions.png"] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setTintColor:[UIColor colorWithWhite:.15 alpha:1]];
+    UIColor *brandColor = [UIColor colorWithRed:0.20 green:0.25 blue:0.26 alpha:1];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigationBar.png"] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setTintColor:brandColor];
     [self.navigationController.navigationBar setTitleTextAttributes:@{
                                                 UITextAttributeFont:[UIFont fontWithName:@"AvenirNext-HeavyItalic" size:22],
-                                           UITextAttributeTextColor:[UIColor colorWithRed:1 green:.6 blue:0 alpha:1],
+                                           UITextAttributeTextColor:[UIColor colorWithRed:1 green:.56 blue:.29 alpha:1],
                                      UITextAttributeTextShadowColor:[UIColor blackColor]
      }];
     [self setTitle:@"Missions"];
-    [self.tableView setBackgroundColor:[UIColor colorWithWhite:.7 alpha:1]];
-    [self.tableView setSeparatorColor:[UIColor colorWithWhite:.65 alpha:1]];
+//    [self.tableView setBackgroundColor:[UIColor colorWithWhite:.7 alpha:1]];
+    [self.tableView setBackgroundColor:[UIColor colorWithWhite:.8 alpha:1]];
+    [self.tableView setSeparatorColor:[UIColor colorWithWhite:.7 alpha:1]];
     [super viewDidLoad];
 }
 
@@ -108,13 +109,13 @@
         NSLog(@"mission----%@",record);
         NSDictionary *responseTasksObject = [record objectForKey:@"Tasks"];
         NSLog(@"responseTasksObject\r %@", responseTasksObject);
-        NSMutableArray *tasksArray = [[NSMutableArray alloc] init];
+        NSMutableArray *tasksArray = [[[NSMutableArray alloc] init] autorelease];
         
         if( ![responseTasksObject isEqual:[NSNull null]] ) {
             NSDictionary *responseTasks = [responseTasksObject objectForKey:@"records"];
             for(NSMutableDictionary *singleTask in responseTasks){
                 NSLog(@"singleTask %@", singleTask);
-                SFTask *task = [[SFTask alloc] initWithDictionary:singleTask];
+                SFTask *task = [[[SFTask alloc] initWithDictionary:singleTask] autorelease];
                 
                 [tasksArray addObject:task];
             }
@@ -124,7 +125,7 @@
             SFTask *task = [[SFTask alloc] initWithDictionary:[noTasksDictionary mutableCopy]];
             [tasksArray addObject:task];
         }
-        SFMission* thisMission = [[SFMission alloc] initWithMissionId:[record objectForKey:@"Id"] andName:[record objectForKey:@"Name"] andStatus:[record objectForKey:@"Status__c"] andTasks:tasksArray];
+        SFMission* thisMission = [[[SFMission alloc] initWithMissionId:[record objectForKey:@"Id"] andName:[record objectForKey:@"Name"] andStatus:[record objectForKey:@"Status__c"] andTasks:tasksArray] autorelease];
 //      NSLog(@"thismission inside---%@",thisMission);
         [self.allMissions addObject:thisMission];
 //      NSLog(@"allmissions inside---%@",self.allMissions);
@@ -172,8 +173,7 @@
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // UI
-    [cell setBackgroundColor:[UIColor colorWithWhite:.4 alpha:1]];
-    [cell.textLabel setTextColor:[UIColor colorWithWhite:.8 alpha:1]];
+    [cell.textLabel setTextColor:[UIColor colorWithWhite:.3 alpha:1]];
     [cell.textLabel setFont:[UIFont fontWithName:@"AvenirNext-DemiBold" size:18]];
 }
 
@@ -209,10 +209,11 @@
 
 
 #pragma mark - Mobile SDK additional samples
+/*
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    NSDictionary *obj = [allAlbums objectAtIndex:indexPath.row];
+    NSDictionary *obj = [self.allMissions objectAtIndex:indexPath.row];
     NSString *aid = [obj objectForKey:@"Id"];
     NSString *objectType = @"Album__c";
     SFRestRequest *request;
@@ -220,6 +221,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
         //delete from the cloud
+        // TODO: fix leak
         request = [[SFRestAPI sharedInstance] requestForDeleteWithObjectType:objectType objectId:aid];
         
         
@@ -229,7 +231,7 @@
         [[SFRestAPI sharedInstance] send:request delegate:nil];
         
         //delete the row from the array
-        [allAlbums removeObject:obj];
+        [self.allMissions removeObject:obj];
         
         // Delete the row from the table
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
@@ -240,8 +242,7 @@
     }
     
 }
-
-
+*/
 
 #pragma mark - UITableViewDelegate
 

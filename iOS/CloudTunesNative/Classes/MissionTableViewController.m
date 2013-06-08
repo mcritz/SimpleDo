@@ -28,7 +28,15 @@
 {
     [super viewDidLoad];
     [self setTitle:@"Tasks"];
-    self.addButton = [[UIBarButtonItem alloc] initWithTitle:@"Add Task" style:UIBarButtonSystemItemAdd target:self action:@selector(addButtonPressed)];
+
+    // custom button view
+    UIImage *buttonImage = [UIImage imageNamed:@"buttonAdd.png"];
+    UIButton *aButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [aButton setImage:buttonImage forState:UIControlStateNormal];
+    [aButton setImage:[UIImage imageNamed:@"buttonAddActive.png"]  forState:UIControlStateHighlighted] ;
+    aButton.frame = CGRectMake(0.0, 0.0, buttonImage.size.width, buttonImage.size.height);
+    [aButton addTarget:self action:@selector(addButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    self.addButton = [[UIBarButtonItem alloc] initWithCustomView:aButton];
 
     self.navigationItem.rightBarButtonItem = self.addButton;
 }
@@ -42,11 +50,11 @@
 - (void)addButtonPressed {
     NSLog(@"addButtonPressed");
     
-     NewTaskViewController* newTaskVC =  [[NewTaskViewController alloc] initWithMissionId:self.selectedMission.thisMissionId :nil:nil];
-    NSLog(@"mission ---\r%@,%@,%@",self.selectedMission.thisMissionName,self.selectedMission.thisMissionStatus,self.selectedMission.thisMissionId);
+    NewTaskViewController* newTaskVC =  [[NewTaskViewController alloc] initWithMissionId:self.selectedMission.thisMissionId :nil:nil];
+    NSLog(@"mission ---name:\r%@,status:\r%@,id:\r%@",self.selectedMission.thisMissionName, self.selectedMission.thisMissionStatus, self.selectedMission.thisMissionId);
     
     [self.navigationController pushViewController:newTaskVC animated:YES];
-     [newTaskVC release];
+    [newTaskVC release];
 }
 
 #pragma mark - Table view data source

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SFRestRequest.h"
 
-@interface NewTaskViewController : UIViewController
+@interface NewTaskViewController : UIViewController <SFRestDelegate>
 - (IBAction)saveButtonPressed:(UIBarButtonItem *)sender;
 @property (retain, nonatomic) IBOutlet UITextView *taskTextview;
 - (NewTaskViewController *)initWithMissionId:(NSString *)missionId :(NSString *)nibNameOrNil :(NSBundle *)nibBundleOrNil;

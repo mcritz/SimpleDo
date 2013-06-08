@@ -56,8 +56,7 @@
     SFRestRequest *createTaskReq = [[SFRestAPI sharedInstance] requestForCreateWithObjectType:@"Task" fields:[[NSDictionary alloc] initWithObjectsAndKeys:userId,@"OwnerId",missionId,@"whatId",subject,@"Subject", nil]];
     
     
-    // TODO: indirection
-    [[SFRestAPI sharedInstance] send:createTaskReq delegate:self];
+    [[SFRestAPI sharedInstance] send:createTaskReq delegate:(SFTask<SFRestDelegate> *)self];
 }
 
 @end
