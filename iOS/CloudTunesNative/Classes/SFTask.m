@@ -12,6 +12,7 @@
 #import "SFIdentityData.h"
 #import "SFAccountManager.h"
 #import "TaskViewController.h"
+#import "NewTaskViewController.h"
 
 @interface SFTask()
 
@@ -45,6 +46,16 @@
     NSLog(@"response %@", response);
     // TODO: [response description] should be parsed and pass a legit "yeah, I completed"
     [self.taskVC didUpdateTask:@"Complete"];
+}
+
++(void)createTask:(NewTaskViewController *)sender withMissionId:(NSString*)missionId andSubject:(NSString*)subject
+{
+    SFIdentityData* idData = [[SFAccountManager sharedInstance] idData];
+    NSString* userId = idData.userId;
+    NSLog(@"missionID,userId,subject%@,%@,%@",missionId,userId,subject);
+    SFRestRequest *createTaskReq = [[SFRestAPI sharedInstance] requestForCreateWithObjectType:@"Task" fields:[[NSDictionary alloc] initWithObjectsAndKeys:userId,@"OwnerId",missionId,@"whatId",subject,@"Subject", nil]];
+    
+    [[SFRestAPI sharedInstance] send:createTaskReq delegate:self];
 }
 
 @end

@@ -9,6 +9,7 @@
 #import "MissionTableViewController.h"
 #import "SFTask.h"
 #import "TaskViewController.h"
+#import "NewTaskViewController.h"
 
 @interface MissionTableViewController ()
 @property (nonatomic, retain) SFMission *selectedMission;
@@ -40,6 +41,12 @@
 
 - (void)addButtonPressed {
     NSLog(@"addButtonPressed");
+    
+     NewTaskViewController* newTaskVC =  [[NewTaskViewController alloc] initWithMissionId:self.selectedMission.thisMissionId :nil:nil];
+    NSLog(@"mission ---\r%@,%@,%@",self.selectedMission.thisMissionName,self.selectedMission.thisMissionStatus,self.selectedMission.thisMissionId);
+    
+    [self.navigationController pushViewController:newTaskVC animated:YES];
+     [newTaskVC release];
 }
 
 #pragma mark - Table view data source
