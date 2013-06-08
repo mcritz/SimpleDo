@@ -55,7 +55,7 @@
 }
 - (void)createTask {
     NSLog(@"Task Complete");
-    [SFTask createTask:nil withMissionId:self.selectedMissionId andSubject:self.newTaskTextview.text];
+    [SFTask createTask:nil withMissionId:self.selectedMissionId andSubject:self.taskTextview.text];
 }
 
 - (void)dealloc {
