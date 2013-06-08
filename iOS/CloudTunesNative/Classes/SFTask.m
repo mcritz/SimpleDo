@@ -55,6 +55,8 @@
     NSLog(@"missionID,userId,subject%@,%@,%@",missionId,userId,subject);
     SFRestRequest *createTaskReq = [[SFRestAPI sharedInstance] requestForCreateWithObjectType:@"Task" fields:[[NSDictionary alloc] initWithObjectsAndKeys:userId,@"OwnerId",missionId,@"whatId",subject,@"Subject", nil]];
     
+    
+    // TODO: indirection
     [[SFRestAPI sharedInstance] send:createTaskReq delegate:self];
 }
 
