@@ -26,12 +26,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setTitle:@"Task"];
+
     [self updateUI];
 }
 
 - (void)updateUI{
     NSLog(@"tasks of the selected mission---%@", self.task);
-    [self setTitle:[self.task taskSubject]];
 
     NSString *status;
     if(![self.task isEqual:[NSNull null]])

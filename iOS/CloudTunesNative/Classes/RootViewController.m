@@ -52,6 +52,18 @@
 
 - (void)viewDidLoad
 {
+
+    // UIColor *brandColor = [[UIColor alloc] initWithRed:22 green:109 blue:78 alpha:1];
+    // [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navBarMissions.png"] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setTintColor:[UIColor colorWithWhite:.15 alpha:1]];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{
+                                                UITextAttributeFont:[UIFont fontWithName:@"AvenirNext-HeavyItalic" size:22],
+                                           UITextAttributeTextColor:[UIColor colorWithRed:1 green:.6 blue:0 alpha:1],
+                                     UITextAttributeTextShadowColor:[UIColor blackColor]
+     }];
+    [self setTitle:@"Missions"];
+    [self.tableView setBackgroundColor:[UIColor colorWithWhite:.7 alpha:1]];
+    [self.tableView setSeparatorColor:[UIColor colorWithWhite:.65 alpha:1]];
     [super viewDidLoad];
 }
 
@@ -113,9 +125,9 @@
             [tasksArray addObject:task];
         }
         SFMission* thisMission = [[SFMission alloc] initWithMissionId:[record objectForKey:@"Id"] andName:[record objectForKey:@"Name"] andStatus:[record objectForKey:@"Status__c"] andTasks:tasksArray];
-         NSLog(@"thismission inside---%@",thisMission);
+//      NSLog(@"thismission inside---%@",thisMission);
         [self.allMissions addObject:thisMission];
-         NSLog(@"allmissions inside---%@",self.allMissions);
+//      NSLog(@"allmissions inside---%@",self.allMissions);
     }
     
     [self.tableView reloadData];
@@ -154,9 +166,17 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
     return [self.allMissions count];
 }
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // UI
+    [cell setBackgroundColor:[UIColor colorWithWhite:.4 alpha:1]];
+    [cell.textLabel setTextColor:[UIColor colorWithWhite:.8 alpha:1]];
+    [cell.textLabel setFont:[UIFont fontWithName:@"AvenirNext-DemiBold" size:18]];
+}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

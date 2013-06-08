@@ -54,7 +54,6 @@ static NSString *const OAuthRedirectURI = @"https://login.salesforce.com/service
 
 #pragma mark - App lifecycle
 
-
 //NOTE be sure to call all super methods you override.
 
 
@@ -64,7 +63,7 @@ static NSString *const OAuthRedirectURI = @"https://login.salesforce.com/service
     
     //For this application we rely upon the behavior of a parent UINavigationController
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:rootVC];
-    
+    [rootVC.navigationController.navigationBar setBackgroundColor:[UIColor redColor]];
     [rootVC release];
     return navController;
 }

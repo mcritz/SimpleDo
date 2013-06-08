@@ -10,6 +10,6 @@
 
 @interface NewTaskViewController : UIViewController
 - (IBAction)saveButtonPressed:(UIBarButtonItem *)sender;
-@property (retain, nonatomic) IBOutlet UITextView *newTaskTextview;
+@property (retain, nonatomic) IBOutlet UITextView *taskTextview;
 
 @end

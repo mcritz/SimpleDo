@@ -26,7 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setTitle:[self.selectedMission thisMissionName]];
+    [self setTitle:@"Tasks"];
     self.addButton = [[UIBarButtonItem alloc] initWithTitle:@"Add Task" style:UIBarButtonSystemItemAdd target:self action:@selector(addButtonPressed)];
 
     self.navigationItem.rightBarButtonItem = self.addButton;

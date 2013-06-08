@@ -14,6 +14,6 @@
 @property (strong,nonatomic) NSString* thisMissionStatus;
 // -(NSDictionary*)querySFDC:(NSString*)userId;
 -(id)initWithMissionId: (NSString* )missionId andName:missionName andStatus:missionStatus andTasks:(NSArray *)tasks;
--(NSString*)updateTask: (NSString*)taskId withStatus:(NSString* )taskStatus;
+// -(NSString*)updateTask: (NSString*)taskId withStatus:(NSString* )taskStatus;
 @property (nonatomic, retain)NSArray *tasks;
 @end

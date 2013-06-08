@@ -39,11 +39,11 @@
     NSLog(@"saveButtonPressed");
 }
 - (void)dealloc {
-    [_newTaskTextview release];
+    [_taskTextview release];
     [super dealloc];
 }
 - (void)viewDidUnload {
-    [self setNewTaskTextview:nil];
+    [self setTaskTextview:nil];
     [super viewDidUnload];
 }
 @end
