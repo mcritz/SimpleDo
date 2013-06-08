@@ -63,7 +63,6 @@ static NSString *const OAuthRedirectURI = @"https://login.salesforce.com/service
     
     //For this application we rely upon the behavior of a parent UINavigationController
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:rootVC];
-    [rootVC.navigationController.navigationBar setBackgroundColor:[UIColor redColor]];
     [rootVC release];
     return navController;
 }
