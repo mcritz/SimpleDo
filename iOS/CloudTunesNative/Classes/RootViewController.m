@@ -53,7 +53,7 @@
 - (void)viewDidLoad
 {
 
-    UIColor *brandColor = [UIColor colorWithRed:0.35 green:0.41 blue:0.44 alpha:1];
+    UIColor *brandColor = [UIColor colorWithRed:0.18 green:0.20 blue:0.30 alpha:1];
     [self.navigationController.navigationBar setTintColor:brandColor];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigationBar.png"] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setTitleTextAttributes:@{
