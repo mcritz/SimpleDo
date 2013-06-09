@@ -12,7 +12,6 @@
 #import "NewTaskViewController.h"
 
 @interface MissionTableViewController ()
-@property (nonatomic, retain) SFMission *selectedMission;
 @end
 
 @implementation MissionTableViewController
@@ -29,16 +28,38 @@
     [super viewDidLoad];
     [self setTitle:@"Tasks"];
 
-    // custom button view
-    UIImage *buttonImage = [UIImage imageNamed:@"buttonAdd.png"];
-    UIButton *aButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [aButton setImage:buttonImage forState:UIControlStateNormal];
-    [aButton setImage:[UIImage imageNamed:@"buttonAddActive.png"]  forState:UIControlStateHighlighted] ;
-    aButton.frame = CGRectMake(0.0, 0.0, buttonImage.size.width, buttonImage.size.height);
-    [aButton addTarget:self action:@selector(addButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-    self.addButton = [[UIBarButtonItem alloc] initWithCustomView:aButton];
+    // custom addButton view
+//    UIImage *buttonImage = [UIImage imageNamed:@"buttonAdd.png"];
+//    UIButton *aButton = [UIButton buttonWithType:UIButtonTypeContactAdd];
+//    [aButton setImage:buttonImage forState:UIControlStateNormal];
+//    [aButton setImage:[UIImage imageNamed:@"buttonAddActive.png"]  forState:UIControlStateHighlighted] ;
+//    aButton.frame = CGRectMake(0.0, 0.0, buttonImage.size.width, buttonImage.size.height);
+//    [aButton addTarget:self action:@selector(addButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    self.addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonPressed)];
 
     self.navigationItem.rightBarButtonItem = self.addButton;
+    
+    /*
+    // customBackButton view
+    UIImage *backButtonImage = [UIImage imageNamed:@"buttonBack.png"];
+    UIImage *backButtonImageActive = [UIImage imageNamed:@"buttonBackActive.png"];
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [backButton setImage:backButtonImage forState:UIControlStateNormal];
+    [backButton setImage:backButtonImageActive forState:UIControlStateHighlighted];
+    CGRect backButtonFrame = {0.0, 0.0, backButtonImage.size.width, backButtonImage.size.height};
+    backButton.frame = backButtonFrame;
+    UILabel *backLabel = [[UILabel alloc] initWithFrame:backButtonFrame];
+    [backLabel setFont:[UIFont fontWithName:@"Avenir-Heavy" size:14]];
+    [backLabel setBackgroundColor:[UIColor clearColor]];
+    [backLabel setTextColor:[UIColor whiteColor]];
+    [backLabel setTextAlignment:NSTextAlignmentCenter];
+    backLabel.text = @"Missions";
+    [backButton addSubview:backLabel];
+    [backButton addTarget:self action:@selector(backButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    self.backButton = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+    
+    self.navigationItem.leftBarButtonItem = self.backButton;
+     */
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,10 +68,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)backButtonPressed {
+    NSLog(@"backButtonPressed");
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 - (void)addButtonPressed {
     NSLog(@"addButtonPressed");
     
-    NewTaskViewController* newTaskVC =  [[NewTaskViewController alloc] initWithMissionId:self.selectedMission.thisMissionId :nil:nil];
+    NewTaskViewController* newTaskVC =  [[NewTaskViewController alloc] initWithMission:self.selectedMission :nil :nil];
 //    NSLog(@"mission ---name:\r%@,status:\r%@,id:\r%@",self.selectedMission.thisMissionName, self.selectedMission.thisMissionStatus, self.selectedMission.thisMissionId);
     [newTaskVC setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
     [self presentModalViewController:newTaskVC animated:YES];
@@ -82,7 +108,7 @@
     SFTask *obj = [self.selectedMission.tasks objectAtIndex:indexPath.row];
     cell.textLabel.text =  obj.taskSubject;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-
+    [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
     return cell;
 }
 

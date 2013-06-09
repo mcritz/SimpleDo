@@ -10,26 +10,19 @@
 #import "SFTask.h"
 
 @interface NewTaskViewController ()
-@property (nonatomic, retain) NSString *selectedMissionId;
+@property (nonatomic, retain) SFMission *selectedMission;
+@property (nonatomic, retain) IBOutlet UINavigationBar *createTaskNavBar;
 @end
 
 @implementation NewTaskViewController
 
-/*- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}*/
-- (NewTaskViewController *)initWithMissionId:(NSString *)missionId :(NSString *)nibNameOrNil :(NSBundle *)nibBundleOrNil
+- (NewTaskViewController *)initWithMission:(SFMission *)mission :(NSString *)nibNameOrNil :(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self){
-        self.selectedMissionId = missionId;
+        self.selectedMission = mission;
     }
-    NSLog(@"NewtaskVC inited %@",self.selectedMissionId);
+    NSLog(@"NewtaskVC inited %@",self.selectedMission);
     return self;
 }
 
@@ -37,6 +30,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIColor *brandColor = [UIColor colorWithRed:0.20 green:0.25 blue:0.26 alpha:1];
+    [self.navigationController.navigationBar setTintColor:brandColor];
+    [self.createTaskNavBar setBackgroundImage:[UIImage imageNamed:@"navigationBar"] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,8 +49,10 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)createTask {
-    [SFTask createTask:nil withMissionId:self.selectedMissionId andSubject:self.taskTextview.text];
+    [SFTask createTask:nil withMissionId:self.selectedMission.thisMissionId andSubject:self.taskTextview.text];
     [self dismissViewControllerAnimated:YES completion:nil];
+    SFTask *newTask = [[SFTask alloc] init];
+    [self.selectedMission.tasks addObject:newTask];
 }
 
 - (void)dealloc {
