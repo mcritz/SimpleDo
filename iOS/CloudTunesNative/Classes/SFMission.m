@@ -26,7 +26,7 @@
     self.thisMissionStatus = missionStatus;
     SFIdentityData* idData = [[SFAccountManager sharedInstance] idData];
     self.userId = idData.userId;
-    self.tasks = [tasks copy];
+    self.tasks = [tasks mutableCopy];
     return self;
 }
 
