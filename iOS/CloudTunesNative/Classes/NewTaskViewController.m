@@ -10,7 +10,7 @@
 #import "SFTask.h"
 
 @interface NewTaskViewController ()
-@property (nonatomic, retain) NSString *selectedMissionId;
+@property (nonatomic, retain) SFMission *selectedMission;
 @end
 
 @implementation NewTaskViewController
@@ -23,13 +23,13 @@
     }
     return self;
 }*/
-- (NewTaskViewController *)initWithMissionId:(NSString *)missionId :(NSString *)nibNameOrNil :(NSBundle *)nibBundleOrNil
+- (NewTaskViewController *)initWithMission:(SFMission *)mission :(NSString *)nibNameOrNil :(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self){
-        self.selectedMissionId = missionId;
+        self.selectedMission = mission;
     }
-    NSLog(@"NewtaskVC inited %@",self.selectedMissionId);
+    NSLog(@"NewtaskVC inited %@",self.selectedMission);
     return self;
 }
 
@@ -53,8 +53,10 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)createTask {
-    [SFTask createTask:nil withMissionId:self.selectedMissionId andSubject:self.taskTextview.text];
+    [SFTask createTask:nil withMissionId:self.selectedMission.thisMissionId andSubject:self.taskTextview.text];
     [self dismissViewControllerAnimated:YES completion:nil];
+    SFTask *newTask = [[SFTask alloc] init];
+    [self.selectedMission.tasks addObject:newTask];
 }
 
 - (void)dealloc {

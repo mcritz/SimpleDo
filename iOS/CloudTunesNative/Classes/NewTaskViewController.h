@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "SFRestRequest.h"
+#import "SFMission.h"
 
 @interface NewTaskViewController : UIViewController <SFRestDelegate>
 - (IBAction)saveButtonPressed:(UIBarButtonItem *)sender;
 - (IBAction)cancelButtonPressed:(UIBarButtonItem *)sender;
 @property (retain, nonatomic) IBOutlet UITextView *taskTextview;
-- (NewTaskViewController *)initWithMissionId:(NSString *)missionId :(NSString *)nibNameOrNil :(NSBundle *)nibBundleOrNil;
+- (NewTaskViewController *)initWithMission:(SFMission *)mission :(NSString *)nibNameOrNil :(NSBundle *)nibBundleOrNil;
 
 @end
