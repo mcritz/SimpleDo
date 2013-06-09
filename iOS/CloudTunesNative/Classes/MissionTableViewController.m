@@ -42,8 +42,10 @@
     
     // customBackButton view
     UIImage *backButtonImage = [UIImage imageNamed:@"buttonBack.png"];
+    UIImage *backButtonImageActive = [UIImage imageNamed:@"buttonBackActive.png"];
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [backButton setImage:backButtonImage forState:UIControlStateNormal];
+    [backButton setImage:backButtonImageActive forState:UIControlStateHighlighted];
     CGRect backButtonFrame = {0.0, 0.0, backButtonImage.size.width, backButtonImage.size.height};
     backButton.frame = backButtonFrame;
     UILabel *backLabel = [[UILabel alloc] initWithFrame:backButtonFrame];
