@@ -40,8 +40,6 @@
 						<int key="NSvFlags">274</int>
 						<string key="NSFrame">{{0, -16}, {320, 590}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<int key="IBUIContentMode">2</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
@@ -54,7 +52,6 @@
 				</array>
 				<string key="NSFrame">{{0, 20}, {320, 569}}</string>
 				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="991169082"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>

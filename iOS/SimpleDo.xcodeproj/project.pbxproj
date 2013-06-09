@@ -36,6 +36,8 @@
 		0F82EDEF176534C400D918F2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F82EDEE176534C400D918F2 /* Default@2x.png */; };
 		0F82EDF1176534C800D918F2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F82EDF0176534C800D918F2 /* Default.png */; };
 		0F82EDF3176534CC00D918F2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F82EDF2176534CC00D918F2 /* Default-568h@2x.png */; };
+		0F82EDF517653FD800D918F2 /* icon57.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F82EDF417653FD800D918F2 /* icon57.png */; };
+		0F82EDF71765403D00D918F2 /* icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F82EDF61765403D00D918F2 /* icon114.png */; };
 		3B94BF5717595D37009ED823 /* TaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B94BF5617595D37009ED823 /* TaskViewController.m */; };
 		3BB5ED1F1751A7FF00FE30C7 /* SFMission.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB5ED1E1751A7FF00FE30C7 /* SFMission.m */; };
 		82A9FE0C15DC39EA00AE37B9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A9FE0B15DC39EA00AE37B9 /* CoreData.framework */; };
@@ -103,6 +105,8 @@
 		0F82EDEE176534C400D918F2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		0F82EDF0176534C800D918F2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0F82EDF2176534CC00D918F2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		0F82EDF417653FD800D918F2 /* icon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon57.png; sourceTree = "<group>"; };
+		0F82EDF61765403D00D918F2 /* icon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon114.png; sourceTree = "<group>"; };
 		3B94BF5517595D37009ED823 /* TaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TaskViewController.h; path = Classes/TaskViewController.h; sourceTree = "<group>"; };
 		3B94BF5617595D37009ED823 /* TaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TaskViewController.m; path = Classes/TaskViewController.m; sourceTree = "<group>"; };
 		3BB5ED1D1751A7FE00FE30C7 /* SFMission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFMission.h; path = Classes/SFMission.h; sourceTree = "<group>"; };
@@ -316,6 +320,8 @@
 		82A9FDFB15DC39EA00AE37B9 = {
 			isa = PBXGroup;
 			children = (
+				0F82EDF61765403D00D918F2 /* icon114.png */,
+				0F82EDF417653FD800D918F2 /* icon57.png */,
 				0F82EDF2176534CC00D918F2 /* Default-568h@2x.png */,
 				0F82EDF0176534C800D918F2 /* Default.png */,
 				0F82EDEE176534C400D918F2 /* Default@2x.png */,
@@ -753,6 +759,8 @@
 				0F82EDEF176534C400D918F2 /* Default@2x.png in Resources */,
 				0F82EDF1176534C800D918F2 /* Default.png in Resources */,
 				0F82EDF3176534CC00D918F2 /* Default-568h@2x.png in Resources */,
+				0F82EDF517653FD800D918F2 /* icon57.png in Resources */,
+				0F82EDF71765403D00D918F2 /* icon114.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
