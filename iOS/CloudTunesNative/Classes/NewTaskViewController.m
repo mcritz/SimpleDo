@@ -11,6 +11,7 @@
 
 @interface NewTaskViewController ()
 @property (nonatomic, retain) SFMission *selectedMission;
+@property (nonatomic, retain) IBOutlet UINavigationBar *createTaskNavBar;
 @end
 
 @implementation NewTaskViewController
@@ -29,6 +30,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIColor *brandColor = [UIColor colorWithRed:0.20 green:0.25 blue:0.26 alpha:1];
+    [self.navigationController.navigationBar setTintColor:brandColor];
+    [self.createTaskNavBar setBackgroundImage:[UIImage imageNamed:@"navigationBar"] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)didReceiveMemoryWarning

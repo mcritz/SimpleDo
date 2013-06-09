@@ -53,9 +53,9 @@
 - (void)viewDidLoad
 {
 
-    UIColor *brandColor = [UIColor colorWithRed:0.20 green:0.25 blue:0.26 alpha:1];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigationBar.png"] forBarMetrics:UIBarMetricsDefault];
+    UIColor *brandColor = [UIColor colorWithRed:0.35 green:0.41 blue:0.44 alpha:1];
     [self.navigationController.navigationBar setTintColor:brandColor];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigationBar.png"] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setTitleTextAttributes:@{
                                                 UITextAttributeFont:[UIFont fontWithName:@"AvenirNext-HeavyItalic" size:22],
                                            UITextAttributeTextColor:[UIColor colorWithRed:1 green:.56 blue:.29 alpha:1],
@@ -63,7 +63,7 @@
      }];
     [self setTitle:@"Missions"];
 //    [self.tableView setBackgroundColor:[UIColor colorWithWhite:.7 alpha:1]];
-    [self.tableView setBackgroundColor:[UIColor colorWithWhite:.8 alpha:1]];
+//    [self.tableView setBackgroundColor:[UIColor colorWithWhite:.8 alpha:1]];
     [self.tableView setSeparatorColor:[UIColor colorWithWhite:.7 alpha:1]];
     [super viewDidLoad];
 }

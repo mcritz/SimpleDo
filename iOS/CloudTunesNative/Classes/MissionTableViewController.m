@@ -29,17 +29,17 @@
     [self setTitle:@"Tasks"];
 
     // custom addButton view
-    UIImage *buttonImage = [UIImage imageNamed:@"buttonAdd.png"];
-    UIButton *aButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [aButton setImage:buttonImage forState:UIControlStateNormal];
-    [aButton setImage:[UIImage imageNamed:@"buttonAddActive.png"]  forState:UIControlStateHighlighted] ;
-    aButton.frame = CGRectMake(0.0, 0.0, buttonImage.size.width, buttonImage.size.height);
-    [aButton addTarget:self action:@selector(addButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-    self.addButton = [[UIBarButtonItem alloc] initWithCustomView:aButton];
+//    UIImage *buttonImage = [UIImage imageNamed:@"buttonAdd.png"];
+//    UIButton *aButton = [UIButton buttonWithType:UIButtonTypeContactAdd];
+//    [aButton setImage:buttonImage forState:UIControlStateNormal];
+//    [aButton setImage:[UIImage imageNamed:@"buttonAddActive.png"]  forState:UIControlStateHighlighted] ;
+//    aButton.frame = CGRectMake(0.0, 0.0, buttonImage.size.width, buttonImage.size.height);
+//    [aButton addTarget:self action:@selector(addButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    self.addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonPressed)];
 
     self.navigationItem.rightBarButtonItem = self.addButton;
     
-    
+    /*
     // customBackButton view
     UIImage *backButtonImage = [UIImage imageNamed:@"buttonBack.png"];
     UIImage *backButtonImageActive = [UIImage imageNamed:@"buttonBackActive.png"];
@@ -59,6 +59,7 @@
     self.backButton = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     
     self.navigationItem.leftBarButtonItem = self.backButton;
+     */
 }
 
 - (void)didReceiveMemoryWarning

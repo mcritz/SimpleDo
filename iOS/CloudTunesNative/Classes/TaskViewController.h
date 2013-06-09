@@ -14,5 +14,4 @@
 - (void)didUpdateTask:(NSString *)status;
 @property (retain, nonatomic) IBOutlet UIButton *completeButton;
 @property (nonatomic, retain) SFTask* task;
-
 @end

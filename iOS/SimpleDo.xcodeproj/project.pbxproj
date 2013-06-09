@@ -14,6 +14,18 @@
 		0F3E33441760C91200353D60 /* SFRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3E33431760C91100353D60 /* SFRequest.m */; };
 		0F3E33481761887600353D60 /* NewTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3E33461761887600353D60 /* NewTaskViewController.m */; };
 		0F3E33491761887600353D60 /* NewTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F3E33471761887600353D60 /* NewTaskViewController.xib */; };
+		0F82EDCC1764E8A400D918F2 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F82EDC01764E8A400D918F2 /* button.png */; };
+		0F82EDCD1764E8A400D918F2 /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F82EDC11764E8A400D918F2 /* button@2x.png */; };
+		0F82EDCE1764E8A400D918F2 /* buttonAdd.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F82EDC21764E8A400D918F2 /* buttonAdd.png */; };
+		0F82EDCF1764E8A400D918F2 /* buttonAdd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F82EDC31764E8A400D918F2 /* buttonAdd@2x.png */; };
+		0F82EDD01764E8A400D918F2 /* buttonAddActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F82EDC41764E8A400D918F2 /* buttonAddActive.png */; };
+		0F82EDD11764E8A400D918F2 /* buttonAddActive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F82EDC51764E8A400D918F2 /* buttonAddActive@2x.png */; };
+		0F82EDD21764E8A400D918F2 /* buttonBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F82EDC61764E8A400D918F2 /* buttonBack.png */; };
+		0F82EDD31764E8A400D918F2 /* buttonBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F82EDC71764E8A400D918F2 /* buttonBack@2x.png */; };
+		0F82EDD41764E8A400D918F2 /* buttonBackActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F82EDC81764E8A400D918F2 /* buttonBackActive.png */; };
+		0F82EDD51764E8A400D918F2 /* buttonBackActive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F82EDC91764E8A400D918F2 /* buttonBackActive@2x.png */; };
+		0F82EDD61764E8A400D918F2 /* navigationBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F82EDCA1764E8A400D918F2 /* navigationBar.png */; };
+		0F82EDD71764E8A400D918F2 /* navigationBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F82EDCB1764E8A400D918F2 /* navigationBar@2x.png */; };
 		3B94BF5717595D37009ED823 /* TaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B94BF5617595D37009ED823 /* TaskViewController.m */; };
 		3BB5ED1F1751A7FF00FE30C7 /* SFMission.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB5ED1E1751A7FF00FE30C7 /* SFMission.m */; };
 		82A9FE0C15DC39EA00AE37B9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A9FE0B15DC39EA00AE37B9 /* CoreData.framework */; };
@@ -64,6 +76,18 @@
 		0F3E33451761887500353D60 /* NewTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewTaskViewController.h; path = Classes/NewTaskViewController.h; sourceTree = "<group>"; };
 		0F3E33461761887600353D60 /* NewTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewTaskViewController.m; path = Classes/NewTaskViewController.m; sourceTree = "<group>"; };
 		0F3E33471761887600353D60 /* NewTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewTaskViewController.xib; path = Classes/NewTaskViewController.xib; sourceTree = "<group>"; };
+		0F82EDC01764E8A400D918F2 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
+		0F82EDC11764E8A400D918F2 /* button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button@2x.png"; sourceTree = "<group>"; };
+		0F82EDC21764E8A400D918F2 /* buttonAdd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonAdd.png; sourceTree = "<group>"; };
+		0F82EDC31764E8A400D918F2 /* buttonAdd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttonAdd@2x.png"; sourceTree = "<group>"; };
+		0F82EDC41764E8A400D918F2 /* buttonAddActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonAddActive.png; sourceTree = "<group>"; };
+		0F82EDC51764E8A400D918F2 /* buttonAddActive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttonAddActive@2x.png"; sourceTree = "<group>"; };
+		0F82EDC61764E8A400D918F2 /* buttonBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonBack.png; sourceTree = "<group>"; };
+		0F82EDC71764E8A400D918F2 /* buttonBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttonBack@2x.png"; sourceTree = "<group>"; };
+		0F82EDC81764E8A400D918F2 /* buttonBackActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonBackActive.png; sourceTree = "<group>"; };
+		0F82EDC91764E8A400D918F2 /* buttonBackActive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttonBackActive@2x.png"; sourceTree = "<group>"; };
+		0F82EDCA1764E8A400D918F2 /* navigationBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationBar.png; sourceTree = "<group>"; };
+		0F82EDCB1764E8A400D918F2 /* navigationBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationBar@2x.png"; sourceTree = "<group>"; };
 		3B94BF5517595D37009ED823 /* TaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TaskViewController.h; path = Classes/TaskViewController.h; sourceTree = "<group>"; };
 		3B94BF5617595D37009ED823 /* TaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TaskViewController.m; path = Classes/TaskViewController.m; sourceTree = "<group>"; };
 		3BB5ED1D1751A7FE00FE30C7 /* SFMission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFMission.h; path = Classes/SFMission.h; sourceTree = "<group>"; };
@@ -253,6 +277,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F82EDBF1764E89000D918F2 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				0F82EDC01764E8A400D918F2 /* button.png */,
+				0F82EDC11764E8A400D918F2 /* button@2x.png */,
+				0F82EDC21764E8A400D918F2 /* buttonAdd.png */,
+				0F82EDC31764E8A400D918F2 /* buttonAdd@2x.png */,
+				0F82EDC41764E8A400D918F2 /* buttonAddActive.png */,
+				0F82EDC51764E8A400D918F2 /* buttonAddActive@2x.png */,
+				0F82EDC61764E8A400D918F2 /* buttonBack.png */,
+				0F82EDC71764E8A400D918F2 /* buttonBack@2x.png */,
+				0F82EDC81764E8A400D918F2 /* buttonBackActive.png */,
+				0F82EDC91764E8A400D918F2 /* buttonBackActive@2x.png */,
+				0F82EDCA1764E8A400D918F2 /* navigationBar.png */,
+				0F82EDCB1764E8A400D918F2 /* navigationBar@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		82A9FDFB15DC39EA00AE37B9 = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +332,7 @@
 		82A9FE1D15DC39EA00AE37B9 /* SimpleDo */ = {
 			isa = PBXGroup;
 			children = (
+				0F82EDBF1764E89000D918F2 /* Images */,
 				82A9FEC715DC39EC00AE37B9 /* Classes */,
 				82A9FEC515DC39EC00AE37B9 /* readme.txt */,
 				82A9FED915DC39EC00AE37B9 /* Settings.bundle */,
@@ -677,6 +721,18 @@
 				0F3E332E175D9C0300353D60 /* TaskViewController.xib in Resources */,
 				0F3E3341176050C800353D60 /* MissionTableViewController.xib in Resources */,
 				0F3E33491761887600353D60 /* NewTaskViewController.xib in Resources */,
+				0F82EDCC1764E8A400D918F2 /* button.png in Resources */,
+				0F82EDCD1764E8A400D918F2 /* button@2x.png in Resources */,
+				0F82EDCE1764E8A400D918F2 /* buttonAdd.png in Resources */,
+				0F82EDCF1764E8A400D918F2 /* buttonAdd@2x.png in Resources */,
+				0F82EDD01764E8A400D918F2 /* buttonAddActive.png in Resources */,
+				0F82EDD11764E8A400D918F2 /* buttonAddActive@2x.png in Resources */,
+				0F82EDD21764E8A400D918F2 /* buttonBack.png in Resources */,
+				0F82EDD31764E8A400D918F2 /* buttonBack@2x.png in Resources */,
+				0F82EDD41764E8A400D918F2 /* buttonBackActive.png in Resources */,
+				0F82EDD51764E8A400D918F2 /* buttonBackActive@2x.png in Resources */,
+				0F82EDD61764E8A400D918F2 /* navigationBar.png in Resources */,
+				0F82EDD71764E8A400D918F2 /* navigationBar@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
