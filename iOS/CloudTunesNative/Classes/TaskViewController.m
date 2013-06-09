@@ -27,7 +27,6 @@
 {
     [super viewDidLoad];
     [self setTitle:@"Task"];
-
     [self updateUI];
 }
 
@@ -39,7 +38,9 @@
     {
         self.taskText = [self.task taskSubject];
         status = [self.task taskStatus];
-        if ([self.task.taskStatus isEqual:@"Completed"]) {
+        if (![self.task.taskStatus isEqual:@"Completed"]) {
+            [self.completeButton setHidden:NO];
+        } else {
             [self.completeButton setHidden:YES];
         }
     } else {

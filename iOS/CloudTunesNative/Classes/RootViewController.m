@@ -64,6 +64,7 @@
     [self setTitle:@"Missions"];
 //    [self.tableView setBackgroundColor:[UIColor colorWithWhite:.7 alpha:1]];
 //    [self.tableView setBackgroundColor:[UIColor colorWithWhite:.8 alpha:1]];
+
     [self.tableView setSeparatorColor:[UIColor colorWithWhite:.7 alpha:1]];
     [super viewDidLoad];
 }
@@ -175,6 +176,7 @@
     // UI
     [cell.textLabel setTextColor:[UIColor colorWithWhite:.3 alpha:1]];
     [cell.textLabel setFont:[UIFont fontWithName:@"AvenirNext-DemiBold" size:18]];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
 }
 
 

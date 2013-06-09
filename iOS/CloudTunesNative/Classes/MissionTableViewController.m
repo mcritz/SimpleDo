@@ -108,7 +108,7 @@
     SFTask *obj = [self.selectedMission.tasks objectAtIndex:indexPath.row];
     cell.textLabel.text =  obj.taskSubject;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-
+    [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
     return cell;
 }
 

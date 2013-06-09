@@ -26,6 +26,10 @@
 		0F82EDD51764E8A400D918F2 /* buttonBackActive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F82EDC91764E8A400D918F2 /* buttonBackActive@2x.png */; };
 		0F82EDD61764E8A400D918F2 /* navigationBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F82EDCA1764E8A400D918F2 /* navigationBar.png */; };
 		0F82EDD71764E8A400D918F2 /* navigationBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F82EDCB1764E8A400D918F2 /* navigationBar@2x.png */; };
+		0F82EDDF1765160A00D918F2 /* buttonBig.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F82EDDB1765160A00D918F2 /* buttonBig.png */; };
+		0F82EDE01765160A00D918F2 /* buttonBig@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F82EDDC1765160A00D918F2 /* buttonBig@2x.png */; };
+		0F82EDE11765160A00D918F2 /* buttonBigActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F82EDDD1765160A00D918F2 /* buttonBigActive.png */; };
+		0F82EDE21765160A00D918F2 /* buttonBigActive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F82EDDE1765160A00D918F2 /* buttonBigActive@2x.png */; };
 		3B94BF5717595D37009ED823 /* TaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B94BF5617595D37009ED823 /* TaskViewController.m */; };
 		3BB5ED1F1751A7FF00FE30C7 /* SFMission.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB5ED1E1751A7FF00FE30C7 /* SFMission.m */; };
 		82A9FE0C15DC39EA00AE37B9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A9FE0B15DC39EA00AE37B9 /* CoreData.framework */; };
@@ -88,6 +92,10 @@
 		0F82EDC91764E8A400D918F2 /* buttonBackActive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttonBackActive@2x.png"; sourceTree = "<group>"; };
 		0F82EDCA1764E8A400D918F2 /* navigationBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationBar.png; sourceTree = "<group>"; };
 		0F82EDCB1764E8A400D918F2 /* navigationBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationBar@2x.png"; sourceTree = "<group>"; };
+		0F82EDDB1765160A00D918F2 /* buttonBig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonBig.png; sourceTree = "<group>"; };
+		0F82EDDC1765160A00D918F2 /* buttonBig@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttonBig@2x.png"; sourceTree = "<group>"; };
+		0F82EDDD1765160A00D918F2 /* buttonBigActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonBigActive.png; sourceTree = "<group>"; };
+		0F82EDDE1765160A00D918F2 /* buttonBigActive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttonBigActive@2x.png"; sourceTree = "<group>"; };
 		3B94BF5517595D37009ED823 /* TaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TaskViewController.h; path = Classes/TaskViewController.h; sourceTree = "<group>"; };
 		3B94BF5617595D37009ED823 /* TaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TaskViewController.m; path = Classes/TaskViewController.m; sourceTree = "<group>"; };
 		3BB5ED1D1751A7FE00FE30C7 /* SFMission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFMission.h; path = Classes/SFMission.h; sourceTree = "<group>"; };
@@ -280,6 +288,10 @@
 		0F82EDBF1764E89000D918F2 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0F82EDDB1765160A00D918F2 /* buttonBig.png */,
+				0F82EDDC1765160A00D918F2 /* buttonBig@2x.png */,
+				0F82EDDD1765160A00D918F2 /* buttonBigActive.png */,
+				0F82EDDE1765160A00D918F2 /* buttonBigActive@2x.png */,
 				0F82EDC01764E8A400D918F2 /* button.png */,
 				0F82EDC11764E8A400D918F2 /* button@2x.png */,
 				0F82EDC21764E8A400D918F2 /* buttonAdd.png */,
@@ -733,6 +745,10 @@
 				0F82EDD51764E8A400D918F2 /* buttonBackActive@2x.png in Resources */,
 				0F82EDD61764E8A400D918F2 /* navigationBar.png in Resources */,
 				0F82EDD71764E8A400D918F2 /* navigationBar@2x.png in Resources */,
+				0F82EDDF1765160A00D918F2 /* buttonBig.png in Resources */,
+				0F82EDE01765160A00D918F2 /* buttonBig@2x.png in Resources */,
+				0F82EDE11765160A00D918F2 /* buttonBigActive.png in Resources */,
+				0F82EDE21765160A00D918F2 /* buttonBigActive@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
