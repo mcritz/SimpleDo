@@ -51,9 +51,9 @@
     NSLog(@"addButtonPressed");
     
     NewTaskViewController* newTaskVC =  [[NewTaskViewController alloc] initWithMissionId:self.selectedMission.thisMissionId :nil:nil];
-    NSLog(@"mission ---name:\r%@,status:\r%@,id:\r%@",self.selectedMission.thisMissionName, self.selectedMission.thisMissionStatus, self.selectedMission.thisMissionId);
-    
-    [self.navigationController pushViewController:newTaskVC animated:YES];
+//    NSLog(@"mission ---name:\r%@,status:\r%@,id:\r%@",self.selectedMission.thisMissionName, self.selectedMission.thisMissionStatus, self.selectedMission.thisMissionId);
+    [newTaskVC setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+    [self presentModalViewController:newTaskVC animated:YES];
     [newTaskVC release];
 }
 

@@ -37,11 +37,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"NewtaskVC view did load %@",self.selectedMissionId);
-}
-- (void)updateUI
-{
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,12 +46,15 @@
 }
 
 - (IBAction)saveButtonPressed:(UIBarButtonItem *)sender {
-    NSLog(@"saveButtonPressed");
     [self createTask];
 }
+
+- (IBAction)cancelButtonPressed:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 - (void)createTask {
-    NSLog(@"Task Complete");
     [SFTask createTask:nil withMissionId:self.selectedMissionId andSubject:self.taskTextview.text];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)dealloc {
