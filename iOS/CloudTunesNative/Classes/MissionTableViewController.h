@@ -13,5 +13,7 @@
 
 - (UITableViewController *)initWithMission:(SFMission *)mission :(NSString *)nibNameOrNil :(NSBundle *)nibBundleOrNil;
 @property (nonatomic, assign)UIBarButtonItem *addButton;
+@property (nonatomic, assign)UIBarButtonItem *backButton;
+@property (nonatomic, retain)SFMission *selectedMission;
 
 @end
