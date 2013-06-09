@@ -30,7 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIColor *brandColor = [UIColor colorWithRed:0.20 green:0.25 blue:0.26 alpha:1];
+    UIColor *brandColor = [UIColor colorWithRed:0.18 green:0.20 blue:0.30 alpha:1];
     [self.navigationController.navigationBar setTintColor:brandColor];
     [self.createTaskNavBar setBackgroundImage:[UIImage imageNamed:@"navigationBar"] forBarMetrics:UIBarMetricsDefault];
 }

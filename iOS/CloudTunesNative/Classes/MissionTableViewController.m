@@ -27,39 +27,14 @@
 {
     [super viewDidLoad];
     [self setTitle:@"Tasks"];
+    UIColor *brandColor = [UIColor colorWithRed:0.18 green:0.20 blue:0.30 alpha:1];
+    [self.navigationController.navigationBar setTintColor:brandColor];
+    [self.tableView setSeparatorColor:[UIColor clearColor]];
 
     // custom addButton view
-//    UIImage *buttonImage = [UIImage imageNamed:@"buttonAdd.png"];
-//    UIButton *aButton = [UIButton buttonWithType:UIButtonTypeContactAdd];
-//    [aButton setImage:buttonImage forState:UIControlStateNormal];
-//    [aButton setImage:[UIImage imageNamed:@"buttonAddActive.png"]  forState:UIControlStateHighlighted] ;
-//    aButton.frame = CGRectMake(0.0, 0.0, buttonImage.size.width, buttonImage.size.height);
-//    [aButton addTarget:self action:@selector(addButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     self.addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonPressed)];
 
     self.navigationItem.rightBarButtonItem = self.addButton;
-    
-    /*
-    // customBackButton view
-    UIImage *backButtonImage = [UIImage imageNamed:@"buttonBack.png"];
-    UIImage *backButtonImageActive = [UIImage imageNamed:@"buttonBackActive.png"];
-    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [backButton setImage:backButtonImage forState:UIControlStateNormal];
-    [backButton setImage:backButtonImageActive forState:UIControlStateHighlighted];
-    CGRect backButtonFrame = {0.0, 0.0, backButtonImage.size.width, backButtonImage.size.height};
-    backButton.frame = backButtonFrame;
-    UILabel *backLabel = [[UILabel alloc] initWithFrame:backButtonFrame];
-    [backLabel setFont:[UIFont fontWithName:@"Avenir-Heavy" size:14]];
-    [backLabel setBackgroundColor:[UIColor clearColor]];
-    [backLabel setTextColor:[UIColor whiteColor]];
-    [backLabel setTextAlignment:NSTextAlignmentCenter];
-    backLabel.text = @"Missions";
-    [backButton addSubview:backLabel];
-    [backButton addTarget:self action:@selector(backButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-    self.backButton = [[UIBarButtonItem alloc] initWithCustomView:backButton];
-    
-    self.navigationItem.leftBarButtonItem = self.backButton;
-     */
 }
 
 - (void)didReceiveMemoryWarning
@@ -77,7 +52,6 @@
     NSLog(@"addButtonPressed");
     
     NewTaskViewController* newTaskVC =  [[NewTaskViewController alloc] initWithMission:self.selectedMission :nil :nil];
-//    NSLog(@"mission ---name:\r%@,status:\r%@,id:\r%@",self.selectedMission.thisMissionName, self.selectedMission.thisMissionStatus, self.selectedMission.thisMissionId);
     [newTaskVC setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
     [self presentModalViewController:newTaskVC animated:YES];
     [newTaskVC release];
@@ -92,9 +66,31 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // hopefully not zero…
     return [self.selectedMission.tasks count];
 }
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // UI
+    [cell.textLabel setFont:[UIFont fontWithName:@"AvenirNext-DemiBold" size:18]];
+    SFTask *obj = [self.selectedMission.tasks objectAtIndex:indexPath.row];
+    cell.textLabel.text =  obj.taskSubject;
+    if ([obj.taskStatus isEqualToString:@"Completed"]) {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        [cell.textLabel setTextColor:[UIColor colorWithRed:0.40 green:0.40 blue:0.50 alpha:1]];
+        [cell setBackgroundColor:[UIColor colorWithRed:0.98 green:0.98 blue:1.00 alpha:1]];
+        NSDictionary *fancyLabelAttributes = @{NSStrikethroughStyleAttributeName: [NSNumber numberWithInteger: 0 | 1]};
+        NSAttributedString *fancyTaskLabel = [[NSAttributedString alloc] initWithString:obj.taskSubject
+                                                                             attributes:fancyLabelAttributes];
+        [cell.textLabel setAttributedText:fancyTaskLabel];
+    } else {
+        [cell.textLabel setTextColor:[UIColor colorWithRed:0.49 green:0.39 blue:0.35 alpha:1]];
+//        [cell setBackgroundColor:[UIColor colorWithRed:1.00 green:0.96 blue:0.90 alpha:1]];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
+}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -103,12 +99,6 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-    
-    // Configure the cell...
-    SFTask *obj = [self.selectedMission.tasks objectAtIndex:indexPath.row];
-    cell.textLabel.text =  obj.taskSubject;
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
     return cell;
 }
 
