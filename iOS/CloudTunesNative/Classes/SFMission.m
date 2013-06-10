@@ -30,7 +30,7 @@
     return self;
 }
 
-/*
+
 - (void)request:(SFRestRequest *)request didLoadResponse:(id)response {
 	NSMutableArray *allDetails = [response objectForKey:@"records"];
     NSLog(@"allDetails----%@",allDetails);
@@ -50,6 +50,6 @@
     [alert show];
     [alert release];
 }
-*/
+
 
 @end

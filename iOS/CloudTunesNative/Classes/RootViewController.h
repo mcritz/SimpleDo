@@ -23,11 +23,9 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "SFRestAPI.h"
 
-@interface RootViewController : UITableViewController <SFRestDelegate, UINavigationBarDelegate> {
-    NSMutableArray *allAlbums;    
-}
+@interface RootViewController : UITableViewController <UINavigationBarDelegate>
 
-@property (nonatomic, retain) NSMutableArray *allMissions;
+-(void)updateUI;
+
 @end

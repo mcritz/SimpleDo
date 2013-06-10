@@ -14,6 +14,7 @@
 		0F3E33441760C91200353D60 /* SFRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3E33431760C91100353D60 /* SFRequest.m */; };
 		0F3E33481761887600353D60 /* NewTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3E33461761887600353D60 /* NewTaskViewController.m */; };
 		0F3E33491761887600353D60 /* NewTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F3E33471761887600353D60 /* NewTaskViewController.xib */; };
+		0F42946317657E7C00407B65 /* MissionDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F42946217657E7C00407B65 /* MissionDataRequest.m */; };
 		0F82EDCC1764E8A400D918F2 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F82EDC01764E8A400D918F2 /* button.png */; };
 		0F82EDCD1764E8A400D918F2 /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F82EDC11764E8A400D918F2 /* button@2x.png */; };
 		0F82EDCE1764E8A400D918F2 /* buttonAdd.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F82EDC21764E8A400D918F2 /* buttonAdd.png */; };
@@ -83,6 +84,8 @@
 		0F3E33451761887500353D60 /* NewTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewTaskViewController.h; path = Classes/NewTaskViewController.h; sourceTree = "<group>"; };
 		0F3E33461761887600353D60 /* NewTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewTaskViewController.m; path = Classes/NewTaskViewController.m; sourceTree = "<group>"; };
 		0F3E33471761887600353D60 /* NewTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewTaskViewController.xib; path = Classes/NewTaskViewController.xib; sourceTree = "<group>"; };
+		0F42946117657E7C00407B65 /* MissionDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MissionDataRequest.h; path = Classes/MissionDataRequest.h; sourceTree = "<group>"; };
+		0F42946217657E7C00407B65 /* MissionDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MissionDataRequest.m; path = Classes/MissionDataRequest.m; sourceTree = "<group>"; };
 		0F82EDC01764E8A400D918F2 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
 		0F82EDC11764E8A400D918F2 /* button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button@2x.png"; sourceTree = "<group>"; };
 		0F82EDC21764E8A400D918F2 /* buttonAdd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonAdd.png; sourceTree = "<group>"; };
@@ -320,14 +323,14 @@
 		82A9FDFB15DC39EA00AE37B9 = {
 			isa = PBXGroup;
 			children = (
+				82A9FE1D15DC39EA00AE37B9 /* SimpleDo */,
+				82A9FE0A15DC39EA00AE37B9 /* Frameworks */,
+				82A9FE0815DC39EA00AE37B9 /* Products */,
 				0F82EDF61765403D00D918F2 /* icon114.png */,
 				0F82EDF417653FD800D918F2 /* icon57.png */,
 				0F82EDF2176534CC00D918F2 /* Default-568h@2x.png */,
 				0F82EDF0176534C800D918F2 /* Default.png */,
 				0F82EDEE176534C400D918F2 /* Default@2x.png */,
-				82A9FE1D15DC39EA00AE37B9 /* SimpleDo */,
-				82A9FE0A15DC39EA00AE37B9 /* Frameworks */,
-				82A9FE0815DC39EA00AE37B9 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -358,8 +361,8 @@
 		82A9FE1D15DC39EA00AE37B9 /* SimpleDo */ = {
 			isa = PBXGroup;
 			children = (
-				0F82EDBF1764E89000D918F2 /* Images */,
 				82A9FEC715DC39EC00AE37B9 /* Classes */,
+				0F82EDBF1764E89000D918F2 /* Images */,
 				82A9FEC515DC39EC00AE37B9 /* readme.txt */,
 				82A9FED915DC39EC00AE37B9 /* Settings.bundle */,
 				82A9FE2715DC39EA00AE37B9 /* dependencies */,
@@ -642,6 +645,8 @@
 			children = (
 				82A9FECB15DC39EC00AE37B9 /* RootViewController.h */,
 				82A9FECC15DC39EC00AE37B9 /* RootViewController.m */,
+				0F42946117657E7C00407B65 /* MissionDataRequest.h */,
+				0F42946217657E7C00407B65 /* MissionDataRequest.m */,
 				0F3E3335175EEFBF00353D60 /* SFTask.h */,
 				0F3E3336175EEFBF00353D60 /* SFTask.m */,
 				0F3E332D175D9C0300353D60 /* TaskViewController.xib */,
@@ -780,6 +785,7 @@
 				0F3E3340176050C800353D60 /* MissionTableViewController.m in Sources */,
 				0F3E33441760C91200353D60 /* SFRequest.m in Sources */,
 				0F3E33481761887600353D60 /* NewTaskViewController.m in Sources */,
+				0F42946317657E7C00407B65 /* MissionDataRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
