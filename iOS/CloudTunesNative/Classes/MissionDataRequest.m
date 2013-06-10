@@ -78,6 +78,7 @@
         [self.allMissions addObject:thisMission];
         //      NSLog(@"allmissions inside---%@",self.allMissions);
     }
+    #pragma We can avoid this warning by creating a new subclass of UIViewController… if we had the time
     [self.objectToUpdate updateUI];
 }
 
