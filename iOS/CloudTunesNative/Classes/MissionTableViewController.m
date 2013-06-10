@@ -30,7 +30,7 @@
 
 - (void)updateUI {
     for (SFMission *mission in self.missionData.allMissions) {
-        if (mission.thisMissionId == self.selectedMission.thisMissionId) {
+        if ([mission.thisMissionId isEqualToString:self.selectedMission.thisMissionId]) {
             self.selectedMission = mission;
             [self.tableView reloadData];
             break;
