@@ -7,6 +7,7 @@
 //
 
 #import "NewTaskViewController.h"
+#import "MissionDataRequest.h"
 #import "SFTask.h"
 
 @interface NewTaskViewController ()
@@ -49,10 +50,17 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)createTask {
-    [SFTask createTask:nil withMissionId:self.selectedMission.thisMissionId andSubject:self.taskTextview.text];
+    [SFTask createTask:nil withMissionId:self.selectedMission.thisMissionId andSubject:self.taskTextview.text andSender:self];
+    // TODO: replace these fake tasks with real cloud data
     [self dismissViewControllerAnimated:YES completion:nil];
     SFTask *newTask = [[SFTask alloc] init];
-    [self.selectedMission.tasks addObject:newTask];
+    newTask.taskSubject = self.taskTextview.text;
+    newTask.taskStatus = @"Not Started";
+    [self.selectedMission.tasks insertObject:newTask atIndex:0];
+}
+
+- (void)updateUI {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)dealloc {

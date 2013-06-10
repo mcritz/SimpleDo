@@ -15,5 +15,5 @@
 - (IBAction)cancelButtonPressed:(UIBarButtonItem *)sender;
 @property (retain, nonatomic) IBOutlet UITextView *taskTextview;
 - (NewTaskViewController *)initWithMission:(SFMission *)mission :(NSString *)nibNameOrNil :(NSBundle *)nibBundleOrNil;
-
+- (void)updateUI;
 @end
