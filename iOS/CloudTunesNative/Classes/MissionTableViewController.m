@@ -7,11 +7,16 @@
 //
 
 #import "MissionTableViewController.h"
+
+#import "MissionDataRequest.h"
 #import "SFTask.h"
 #import "TaskViewController.h"
 #import "NewTaskViewController.h"
 
 @interface MissionTableViewController ()
+
+@property (nonatomic)MissionDataRequest *missionData;
+
 @end
 
 @implementation MissionTableViewController
@@ -21,6 +26,22 @@
     
     self.selectedMission = mission;
     return self;
+}
+
+- (void)updateUI {
+    for (SFMission *mission in self.missionData.allMissions) {
+        if (mission.thisMissionId == self.selectedMission.thisMissionId) {
+            self.selectedMission = mission;
+            [self.tableView reloadData];
+            break;
+        }
+    }
+
+    [self.missionData release];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    self.missionData = [[MissionDataRequest alloc] initWithObject:self];
 }
 
 - (void)viewDidLoad
