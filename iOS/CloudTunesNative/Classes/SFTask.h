@@ -22,5 +22,5 @@
 
 - (SFTask *)initWithDictionary:(NSMutableDictionary *)taskDefinition;
 - (void)updateTask:(NSString *)status :sender;
-+(void)createTask:(NSString *)sender withMissionId:(NSString*)missionId andSubject:(NSString*)subject;
++(void)createTask:(NSString *)sender withMissionId:(NSString*)missionId andSubject:(NSString*)subject andSender:(NewTaskViewController *)addTaskVC;
 @end

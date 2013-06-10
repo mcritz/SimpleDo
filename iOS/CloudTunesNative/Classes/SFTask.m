@@ -48,7 +48,7 @@
     [self.taskVC didUpdateTask:@"Complete"];
 }
 
-+(void)createTask:(NewTaskViewController *)sender withMissionId:(NSString*)missionId andSubject:(NSString*)subject
++(void)createTask:(NewTaskViewController *)sender withMissionId:(NSString*)missionId andSubject:(NSString*)subject andSender:(NewTaskViewController *)addTaskVC
 {
     SFIdentityData* idData = [[SFAccountManager sharedInstance] idData];
     NSString* userId = idData.userId;
@@ -57,6 +57,7 @@
     
     
     [[SFRestAPI sharedInstance] send:createTaskReq delegate:(SFTask<SFRestDelegate> *)self];
+    [addTaskVC updateUI];
 }
 
 @end
